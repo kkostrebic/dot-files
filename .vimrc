@@ -233,6 +233,9 @@ Plugin 'vim-scripts/LargeFile'
 " Search in files 
 Plugin 'mileszs/ack.vim'
 
+" Dracula color theme
+Plugin 'dracula/vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
