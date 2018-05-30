@@ -294,6 +294,7 @@ set ruler    		" Show row and column ruler information
 set backspace=indent,eol,start    " Backspace behaviour
 
 set laststatus=2    " show status bar all the time
+set nowrap          " do not wrap long lines"
 
 let g:airline_theme='simple'    " set status bar theme
 let g:airline#extensions#tabline#enabled = 1
