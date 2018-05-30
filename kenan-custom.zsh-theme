@@ -14,11 +14,12 @@ if [ -e ~/.nvm/nvm.sh ]; then
   NODE_PROMPT_="%{$fg_bold[blue]%}(%{$fg[green]%}\$(nvm current)%{$fg_bold[blue]%})%{$reset_color%}"
 fi
 
+USER_NAME_='%{'$'\033''[93m%}$(whoami)%{$reset_color%} '
 
 # Get the host name (first 4 chars)
-HOST_PROMPT_="%{$fg_bold[cyan]%}%c "
+HOST_PROMPT_='%{'$'\e''[96m%}%c '
 GIT_PROMPT="%{$fg_bold[blue]%}\$(git_prompt_info) > %{$fg_bold[blue]%}%{$reset_color%}"
-PROMPT="$HOST_PROMPT_$NODE_PROMPT_$RUBY_PROMPT_$GIT_PROMPT"
+PROMPT="$USER_NAME_$HOST_PROMPT_$NODE_PROMPT_$RUBY_PROMPT_$GIT_PROMPT"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
