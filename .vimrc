@@ -277,9 +277,11 @@ set softtabstop=2   " Number of spaces per Tab
 set tabstop=2   
 
 set clipboard=unnamed,unnamedplus         " use the system clipboard
-" background to dark to keep same color schema when using vim in tmux
-set background=dark
 
+" background to dark to keep same color schema when using vim in tmux
+set t_Co=256 " make sure that terminal has 256 colros enabled
+colorscheme 'dracula' " set dracula colorscheme
+set background=dark
 
 " ============================== 
 " === autoread functionality ===
