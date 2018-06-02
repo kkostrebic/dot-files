@@ -200,12 +200,6 @@ Plugin 'tpope/vim-surround'
 " insert or delete brackets, parens, quotes in pair
 Plugin 'jiangmiao/auto-pairs'
 
-" status bar plugins 
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
-" set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
-" let &statusline='%<%f%{&mod?"[+]":""}%r%{&fenc !~ "^$\\|utf-8" || &bomb ? "[".&fenc.(&bomb?"-bom":"")."]" : ""}%=%15.(%l,%c%V %P%)'
-
 " Fuzzy file, buffer, mru, tag, etc. finder
 Plugin 'ctrlpvim/ctrlp.vim'
 
@@ -234,7 +228,7 @@ Plugin 'vim-scripts/LargeFile'
 Plugin 'mileszs/ack.vim'
 
 " Dracula color theme
-Plugin 'dracula/vim'
+" Plugin 'dracula/vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -301,18 +295,12 @@ set backspace=indent,eol,start    " Backspace behaviour
 set laststatus=2    " show status bar all the time
 set nowrap          " do not wrap long lines"
 
-let g:airline_theme='simple'    " set status bar theme
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-
-
 let NERDTreeShowHidden=1    " show hidden files in NERDTree
 
 highlight Pmenu ctermfg=0 ctermbg=15
 highlight PmenuSel ctermfg=0 ctermbg=7
 
-
+" Use ripgrep (in case it's there) for text search 
 if executable('rg')
   let g:ackprg = 'rg --vimgrep'
 endif
