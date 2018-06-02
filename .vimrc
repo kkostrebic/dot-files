@@ -233,8 +233,8 @@ Plugin 'vim-scripts/LargeFile'
 " Search in files 
 Plugin 'mileszs/ack.vim'
 
-" Dracula color theme
-Plugin 'dracula/vim'
+" New railscasts theme 
+Plugin 'carakan/new-railscasts-theme'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -280,8 +280,8 @@ set clipboard=unnamed,unnamedplus         " use the system clipboard
 
 " background to dark to keep same color schema when using vim in tmux
 set t_Co=256 " make sure that terminal has 256 colros enabled
-colorscheme dracula " set dracula colorscheme
 set background=dark
+colorscheme new-railscasts " set new-railscasts colorscheme
 
 " ============================== 
 " === autoread functionality ===
