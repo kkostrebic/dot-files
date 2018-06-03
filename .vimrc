@@ -274,7 +274,7 @@ set clipboard=unnamed,unnamedplus         " use the system clipboard
 
 " background to dark to keep same color schema when using vim in tmux
 set t_Co=256 " make sure that terminal has 256 colros enabled
-set background=dark
+" set background=dark
 colorscheme new-railscasts " set new-railscasts colorscheme
 
 " ============================== 
