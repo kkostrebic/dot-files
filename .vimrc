@@ -304,3 +304,10 @@ highlight PmenuSel ctermfg=0 ctermbg=7
 if executable('rg')
   let g:ackprg = 'rg --vimgrep'
 endif
+
+set statusline=%f " filename
+set statusline+=\ %h%m%r " help buffer tag, modified tag, read only tag
+set statusline+=%= " separator left-right side of status line
+set statusline+=\ %l/%L:%c " line-number/total-number-of-lines:column-number
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding} " file encoding
+set statusline+=\ [%{&ff}] " file format
