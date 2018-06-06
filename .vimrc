@@ -227,8 +227,8 @@ Plugin 'vim-scripts/LargeFile'
 " Search in files 
 Plugin 'mileszs/ack.vim'
 
-" New railscasts theme 
-Plugin 'carakan/new-railscasts-theme'
+" New color theme
+Plugin 'YorickPeterse/happy_hacking.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -275,7 +275,7 @@ set clipboard=unnamed,unnamedplus         " use the system clipboard
 " background to dark to keep same color schema when using vim in tmux
 set t_Co=256 " make sure that terminal has 256 colros enabled
 " set background=dark
-colorscheme new-railscasts " set new-railscasts colorscheme
+colorscheme happy_hacking " set colorscheme
 
 " ============================== 
 " === autoread functionality ===
@@ -311,3 +311,5 @@ set statusline+=%= " separator left-right side of status line
 set statusline+=\ %l/%L:%c " line-number/total-number-of-lines:column-number
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding} " file encoding
 set statusline+=\ [%{&ff}] " file format
+
+let g:miniBufExplForceSyntaxEnable = 1
