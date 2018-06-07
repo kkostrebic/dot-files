@@ -210,7 +210,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dbext.vim'
 
 " Elegant buffer explorer
-Plugin 'fholgado/minibufexpl.vim'
+Plugin 'ap/vim-buftabline'
 
 " Provide easy code formatting
 Plugin 'Chiel92/vim-autoformat'
@@ -312,4 +312,8 @@ set statusline+=\ %l/%L:%c " line-number/total-number-of-lines:column-number
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding} " file encoding
 set statusline+=\ [%{&ff}] " file format
 
-let g:miniBufExplForceSyntaxEnable = 1
+" Modification of complete functionality (so it looks more like the
+" autocomplete from IDEs)
+set completeopt=longest,menuone
+
+let g:buftabline_numbers = 1 " show buffer numbers in tab line
