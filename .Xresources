@@ -1,3 +1,9 @@
+/* original configuration from: 
+ * https://wiki.mpich.org/mpich/index.php/Configure_xterm_Fonts_and_Colors_for_Your_Eyeball 
+ * /
+/* apply changes running: 
+ * xrdb -merge ~/.Xresources 
+ * */
 XTerm*faceName: Bitstream Vera Serif Mono
 xterm*faceSize: 11
 xterm*vt100*geometry: 80x60
@@ -37,7 +43,8 @@ xterm*eightBitInput: false
 #define _colorIT       #80d4aa
 !TXT Normal, Normal, Cursor
 #define _foreground    #dcdccc
-#define _background    #1f1f1f
+#define _background    #000000
+/* #define _background    #1f1f1f */
 #define _cursorColor   #8faf9f
 URxvt*color0         : _color0
 URxvt*color1         : _color1
