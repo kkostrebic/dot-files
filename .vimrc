@@ -331,3 +331,9 @@ set statusline+=\ [%{&ff}] " file format
 set completeopt=longest,menuone
 
 let g:buftabline_numbers = 1 " show buffer numbers in tab line
+
+" GVim settings
+set guioptions-=m "remove menu bar
+set guioptions-=T "remove toolbar
+set guioptions-=r "remove right-hand scroll bar 
+set guioptions-=L "remove left-hand scroll bar 
