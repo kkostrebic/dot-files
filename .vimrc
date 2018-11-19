@@ -322,6 +322,7 @@ set statusline=%f " filename
 set statusline+=\ %h%m%r " help buffer tag, modified tag, read only tag
 set statusline+=%= " separator left-right side of status line
 set statusline+=\ %l/%L:%c " line-number/total-number-of-lines:column-number
+set statusline+=\ [0x%B] " unicode value of the characted under the cursor
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding} " file encoding
 set statusline+=\ [%{&ff}] " file format
 
