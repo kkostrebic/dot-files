@@ -158,19 +158,12 @@ interval=5
 # color=#00FF00
 
 [dunstindicator]
-# _indicator="true"
 full_text=
-command=$HOME/projects/private/scripts/clear_notifications.bash
-# i3-msg -q exec 
+command=$HOME/projects/private/scripts/other_notifications_handler.bash
 color=#00FF00
-# interval=once
-# format=json
 signal=10
 
 [mail]
-_counter=4
-full_text=|4
-color=#00FFFF
-command=$HOME/projects/private/scripts/mail_notification.bash
+command=$HOME/projects/private/scripts/mail_notification_handler.bash
 format=json
 signal=11

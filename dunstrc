@@ -304,10 +304,12 @@
 #    history_ignore = yes
 
 [email-ignore]
-appname = "Thunderbird"
-history_ignore = yes
-script = $HOME/projects/private/scripts/mail_notification_signal.bash
+    appname = Thunderbird
+    history_ignore = yes
+    script = /home/helmut/projects/private/scripts/mail_notification_signal.bash
 
+[show-indicator]
+    script = /home/helmut/projects/private/scripts/other_notifications_signal.bash
 #[signed_on]
 #    appname = Pidgin
 #    summary = "*signed on*"
