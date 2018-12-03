@@ -158,7 +158,7 @@ interval=5
 # color=#00FF00
 
 [dunstindicator]
-full_text=
+full_text=
 command=$HOME/projects/private/scripts/other_notifications_handler.bash
 color=#00FF00
 signal=10
