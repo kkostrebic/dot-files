@@ -304,12 +304,12 @@
 #    history_ignore = yes
 
 [show-indicator]
-    script = /home/helmut/projects/private/scripts/other_notifications_signal.bash
+    script = $DUNST_CONFIG_DIR/signals/other_notifications_signal.bash
 
 [email-ignore]
     appname = Thunderbird
     history_ignore = yes
-    script = /home/helmut/projects/private/scripts/mail_notification_signal.bash
+    script = $DUNST_CONFIG_DIR/signals/mail_notification_signal.bash
 
 #[signed_on]
 #    appname = Pidgin
@@ -330,5 +330,4 @@
 #    appname = Pidgin
 #    summary = *twitter.com*
 #    urgency = normal
-#
-# vim: ft=cfg
+# # vim: ft=cfg

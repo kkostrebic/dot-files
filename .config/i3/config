@@ -158,7 +158,14 @@ bindsym Control+Mod1+l exec i3lock -c 000000
 # finds out, if available)
 bar {
         # status_command i3status
-        status_command i3blocks
+        # status_command 2>/tmp/i3blocks.err i3blocks -vvv | tee /tmp/i3blocks.out
+        status_command env $(cat $HOME/.i3vars | xargs) i3blocks 
 }
 
 # exec_always --no-startup-id polybar example
+
+# run notification daemon
+exec --no-startup-id dunst
+
+# run mail client
+exec --no-startup-id thunderbird
