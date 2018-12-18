@@ -304,12 +304,12 @@
 #    history_ignore = yes
 
 [show-indicator]
-    script = $DUNST_CONFIG_DIR/signals/other_notifications_signal.bash
+    script = ~/.config/dunst/signals/other_notifications_signal.bash
 
 [email-ignore]
     appname = Thunderbird
     history_ignore = yes
-    script = $DUNST_CONFIG_DIR/signals/mail_notification_signal.bash
+    script = ~/.config/dunst/signals/mail_notification_signal.bash
 
 #[signed_on]
 #    appname = Pidgin

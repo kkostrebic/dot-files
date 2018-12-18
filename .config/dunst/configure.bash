@@ -22,11 +22,11 @@ ln -s $SOURCE_DIR/signals $CONFIG_DIR/signals
 sudo ln -s $CONFIG_DIR/config $DUNST_FILE
 
 # set environment variables for i3blocks
-ENV_FILE=~/.i3env
-VAR_NAME=DUNST_CONFIG_DIR
+# ENV_FILE=~/.i3env
+# VAR_NAME=DUNST_CONFIG_DIR
 
 # https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc/
 # If custom profile file does not exist or does not contain I3BLOCKS_CONFIG_DIR
-if [ ! -e $ENV_FILE ] || ! grep -q -F "$VAR_NAME=$CONFIG_DIR" $ENV_FILE; then
-  echo $VAR_NAME=$CONFIG_DIR >> $ENV_FILE
-fi
+# if [ ! -e $ENV_FILE ] || ! grep -q -F "$VAR_NAME=$CONFIG_DIR" $ENV_FILE; then
+#   echo $VAR_NAME=$CONFIG_DIR >> $ENV_FILE
+# fi
