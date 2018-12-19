@@ -152,18 +152,18 @@ interval=5
 #interval=once
 #signal=11
 
-# [test]
-# full_text=Somethig to think about
-# short_text=drama
-# color=#00FF00
-
+# Notification indicator
 [dunstindicator]
 full_text=
 command=$I3BLOCKS_CONFIG_DIR/commands/other_notifications_handler.bash
-color=#00FF00
+color=#555555
+format=json
 signal=12
 
+# Mail indicator
 [mail]
+full_text=
 command=$I3BLOCKS_CONFIG_DIR/commands/mail_notification_handler.bash
+color=#555555
 format=json
 signal=11
