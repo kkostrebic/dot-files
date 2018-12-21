@@ -168,4 +168,4 @@ bar {
 exec --no-startup-id dunst
 
 # run mail client
-exec --no-startup-id thunderbird
+exec --no-startup-id i3-msg 'workspace 1; exec --no-startup-id xterm; exec --no-startup-id xterm; workspace 2; exec thunderbird; workspace 1;'
