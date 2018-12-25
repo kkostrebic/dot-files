@@ -9,3 +9,5 @@ $DIR/i3/configure.bash
 $DIR/i3blocks/configure.bash
 $DIR/rofi/configure.bash
 $DIR/dunst/configure.bash
+$DIR/xterm/configure.bash
+
