@@ -12,6 +12,9 @@ if [ ! -e $CONFIG_DIR ]; then
   mkdir -p $CONFIG_DIR
 fi
 
+# make a link to referenced theme (referenced in the config file)
+ln -s $SOURCE_DIR/kenan-custom.zsh-theme $HOME/.oh-my-zsh/themes/kenan-custom.zsh-theme
+
 # make links to source configuration file
 ln -s $SOURCE_DIR/config $CONFIG_DIR/config
 ln -s $CONFIG_DIR/config $HOME/.zshrc
