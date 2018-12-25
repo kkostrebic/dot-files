@@ -5,6 +5,10 @@ apt update
 apt install -y build-essential \
                net-tools \
                wireless-tools \
+               bluetooth \
+               bluez \
+               bluez-tools \
+               rfkill \
                imagemagick \
                subversion \
                git \
