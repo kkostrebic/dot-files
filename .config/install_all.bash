@@ -4,6 +4,7 @@ apt update
 
 apt install -y build-essential \
                net-tools \
+               wireless-tools \
                imagemagick \
                subversion \
                git \
