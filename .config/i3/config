@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -154,11 +154,29 @@ bindsym $mod+r mode "resize"
 # lock screen using ctrl+alt+l
 bindsym Control+Mod1+l exec i3lock -c 000000
 
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        # i3bar tray icons are somehow odd with padding - setting to 0
+        tray_padding 0
         # status_command i3status
-        # status_command 2>/tmp/i3blocks.err i3blocks -vvv | tee /tmp/i3blocks.out
+        # status_command 2>/tmp/i3blocks.err env $(cat $HOME/.i3env | xargs) i3blocks -vvv | tee /tmp/i3blocks.out
 
         # https://stackoverflow.com/questions/19331497/set-environment-variables-from-file-of-key-pair-values
         status_command env $(cat $HOME/.i3env | xargs) i3blocks 
@@ -166,6 +184,10 @@ bar {
 
 # run notification daemon
 exec --no-startup-id dunst
+# run network-manager applet
+exec --no-startup-id nm-applet
+# run bluetooth applet
+exec --no-startup-id blueman-applet
 
 # run mail client
 exec --no-startup-id i3-msg 'workspace 1; exec --no-startup-id xterm; exec --no-startup-id xterm; workspace 2; exec thunderbird; workspace 1;'
