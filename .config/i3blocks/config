@@ -25,7 +25,7 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 # command=/usr/share/i3blocks/$BLOCK_NAME
-separator_block_width=15
+separator_block_width=20
 markup=none
 
 # Volume indicator
@@ -35,9 +35,9 @@ markup=none
 # See the script for details.
 [volume]
 #label=VOL
-##label=♪
+#label=♪
 #instance=Master
-##instance=PCM
+###instance=PCM
 #interval=once
 #signal=10
 
@@ -106,11 +106,6 @@ label=BAT
 #instance=1
 interval=30
 
-# Date Time
-#
-[time]
-command=date '+%Y-%m-%d %H:%M:%S'
-interval=5
 
 # Generic media player support
 #
@@ -142,15 +137,24 @@ interval=5
 #
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-#[keyindicator]
-#instance=CAPS
-#interval=once
-#signal=11
+[keyindicator]
+full_text=CAPS
+command=$I3BLOCKS_CONFIG_DIR/commands/key_notification_handler.bash
+color=#555555
+format=json
+interval=once
+signal=10
 
 #[keyindicator]
 #instance=NUM
 #interval=once
 #signal=11
+
+# Date Time
+#
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=5
 
 # Notification indicator
 [dunstindicator]
@@ -167,3 +171,6 @@ command=$I3BLOCKS_CONFIG_DIR/commands/mail_notification_handler.bash
 color=#555555
 format=json
 signal=11
+
+[separator]
+full_text=
