@@ -28,12 +28,14 @@ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D69
 # clipit - clipboard manager
 # mupdf - micro pdf reader
 # wkhtmltopdf - html to pdf
+# feh - image viewer
 apt install -y i3lock \
                x11-xserver-utils \
                network-manager \
                network-manager-gnome \
                xdotool \
                clipit \
+               feh \
                mupdf \
                xfonts-base \
                fonts-dejavu-core \
