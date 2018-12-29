@@ -7,3 +7,5 @@ if [[ $CAPS == 'on' ]]; then
 else
   printf '{ "full_text":"CAPS", "color":"#555555" }\n'
 fi
+
+exit 0

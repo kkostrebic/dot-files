@@ -131,6 +131,13 @@ interval=30
 #label=TEMP
 #interval=10
 
+# Date Time
+#
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=5
+color=#555555
+
 # Key indicators
 #
 # Add the following bindings to i3 config file:
@@ -144,17 +151,6 @@ color=#555555
 format=json
 interval=once
 signal=10
-
-#[keyindicator]
-#instance=NUM
-#interval=once
-#signal=11
-
-# Date Time
-#
-[time]
-command=date '+%Y-%m-%d %H:%M:%S'
-interval=5
 
 # Notification indicator
 [dunstindicator]
@@ -171,6 +167,15 @@ command=$I3BLOCKS_CONFIG_DIR/commands/mail_notification_handler.bash
 color=#555555
 format=json
 signal=11
+
+[keyboardlayout]
+_layouts=us-de-ba-rs
+full_text=US
+command=$I3BLOCKS_CONFIG_DIR/commands/keyboard_layout_indicator_handler.bash
+interval=once
+signal=13
+color=#555555
+format=json
 
 [separator]
 full_text=

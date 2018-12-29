@@ -170,6 +170,9 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
+
+bindsym Mod1+Left exec pkill -SIGRTMIN+13 i3blocks
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -181,6 +184,9 @@ bar {
         # https://stackoverflow.com/questions/19331497/set-environment-variables-from-file-of-key-pair-values
         status_command env $(cat $HOME/.i3env | xargs) i3blocks 
 }
+
+# Keyboard layouts
+# exec setxkbmap -layout us -option 'grp:alt_shift_toggle'
 
 # run notification daemon
 exec --no-startup-id dunst
