@@ -27,6 +27,7 @@
 # command=/usr/share/i3blocks/$BLOCK_NAME
 separator_block_width=20
 markup=none
+color=#555555
 
 # Volume indicator
 #
@@ -131,12 +132,6 @@ interval=30
 #label=TEMP
 #interval=10
 
-# Date Time
-#
-[time]
-command=date '+%Y-%m-%d %H:%M:%S'
-interval=5
-color=#555555
 
 # Key indicators
 #
@@ -147,7 +142,6 @@ color=#555555
 [keyindicator]
 full_text=CAPS
 command=$I3BLOCKS_CONFIG_DIR/commands/key_notification_handler.bash
-color=#555555
 format=json
 interval=once
 signal=10
@@ -156,7 +150,6 @@ signal=10
 [dunstindicator]
 full_text=
 command=$I3BLOCKS_CONFIG_DIR/commands/other_notifications_handler.bash
-color=#555555
 format=json
 signal=12
 
@@ -164,9 +157,20 @@ signal=12
 [mail]
 full_text=
 command=$I3BLOCKS_CONFIG_DIR/commands/mail_notification_handler.bash
-color=#555555
 format=json
 signal=11
+
+[volume control]
+full_text=
+command=exec pavucontrol; echo ;
+
+[bluetooth]
+full_text=
+command=exec blueman-manager &>/dev/null; echo ;
+
+[wireless]
+full_text=
+command=xterm -e nmtui; echo ;
 
 [keyboardlayout]
 _layouts=us-de-ba-rs
@@ -174,8 +178,13 @@ full_text=US
 command=$I3BLOCKS_CONFIG_DIR/commands/keyboard_layout_indicator_handler.bash
 interval=once
 signal=13
-color=#555555
 format=json
+
+# Date Time
+#
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=5
 
 [separator]
 full_text=
