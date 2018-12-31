@@ -25,16 +25,18 @@ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D69
 
 # i3lock - screen locker
 # xdotool - fake keyboard/mouse input, window management, etc.
-# clipit - clipboard manager
 # mupdf - micro pdf reader
 # wkhtmltopdf - html to pdf
 # feh - image viewer
+# pavucontrol - pulse audio volume control
+# mc - midnight commander - tui file manager 
+# thunar - gui file manager from xfce
 apt install -y i3lock \
                x11-xserver-utils \
                network-manager \
                network-manager-gnome \
+               pavucontrol \
                xdotool \
-               clipit \
                feh \
                mupdf \
                xfonts-base \
@@ -49,10 +51,13 @@ apt install -y i3lock \
                gimp \
                vlc \
                wkhtmltopdf \
+               mc \
+               thunar \
 
 
 # slack
 # wireshark
+# clipit - clipboard manager
 
 # Online tools:
 # draw.io
