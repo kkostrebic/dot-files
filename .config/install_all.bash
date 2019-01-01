@@ -4,6 +4,7 @@ apt update
 
 apt install -y build-essential \
                net-tools \
+               xinit \
                wireless-tools \
                bluetooth \
                bluez \
@@ -21,7 +22,14 @@ sudo dpkg -i ripgrep_0.10.0_amd64.deb
 gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 \curl -sSL https://get.rvm.io | bash -s stable
 
-./i3/install.bash
+apt install -y xterm \
+               i3blocks \
+               dunst \
+               rofi \
+               tmux \
+               vim-gtk3
+
+./zsh/install.bash
 
 # i3lock - screen locker
 # xdotool - fake keyboard/mouse input, window management, etc.
@@ -31,7 +39,9 @@ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D69
 # pavucontrol - pulse audio volume control
 # mc - midnight commander - tui file manager 
 # thunar - gui file manager from xfce
+# stow - tool for managing the installation of multiple software packages in the same run-time directory tree
 apt install -y i3lock \
+               stow \
                x11-xserver-utils \
                network-manager \
                network-manager-gnome \
