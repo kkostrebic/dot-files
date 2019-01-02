@@ -4,6 +4,8 @@ SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)"
 CONFIG_DIR=$HOME/.config/i3blocks
 
 # TODO: - think of incremental backup...
+rm -f $CONFIG_DIR/config.old $CONFIG_DIR/commands.old
+
 mv -u $CONFIG_DIR/config $CONFIG_DIR/config.old 2>/dev/null
 mv -u $CONFIG_DIR/commands $CONFIG_DIR/commands.old 2>/dev/null
 
@@ -14,7 +16,7 @@ fi
 
 # make links to source configuration file
 ln -s $SOURCE_DIR/config $CONFIG_DIR/config
-ln -s $SOURCE_DIR/commands $CONFIG_DIR/commands
+ln -s $SOURCE_DIR/commands $CONFIG_DIR/
 
 # set environment variables for i3blocks
 ENV_FILE=~/.i3env

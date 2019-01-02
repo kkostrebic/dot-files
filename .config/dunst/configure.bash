@@ -5,6 +5,8 @@ CONFIG_DIR=$HOME/.config/dunst
 DUNST_FILE=/etc/xdg/dunst/dunstrc
 
 # TODO: - think of incremental backup...
+rm -f $CONFIG_DIR/config.old $CONFIG_DIR/signals.old
+
 mv -u $CONFIG_DIR/config $CONFIG_DIR/config.old 2>/dev/null
 mv -u $CONFIG_DIR/signals $CONFIG_DIR/signals.old 2>/dev/null
 # TODO: - avoid using sudo
