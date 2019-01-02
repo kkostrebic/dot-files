@@ -28,6 +28,7 @@ apt install -y build-essential \
                git \
                curl \
                wget \
+               gnupg2 \
                dh-autoreconf \
                default-jdk \
                i3 \
@@ -40,6 +41,7 @@ apt install -y build-essential \
                stow \
                x11-xserver-utils \
                pavucontrol \
+               network-manager \
                wicd \
                blueman \
                xdotool \
@@ -75,7 +77,6 @@ m-a prepare
 # slack
 # wireshark
 # clipit - clipboard manager
-# network-manager \
 # network-manager-gnome \
 
 # Online tools:
