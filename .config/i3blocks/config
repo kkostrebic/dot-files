@@ -183,7 +183,7 @@ format=json
 # Date Time
 #
 [time]
-command=date '+%Y-%m-%d %H:%M:%S'
+command=$I3BLOCKS_CONFIG_DIR/commands/calendar_handler.bash
 interval=5
 
 [separator]
