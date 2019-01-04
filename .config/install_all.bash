@@ -13,6 +13,7 @@ apt update
 # mc - midnight commander - tui file manager 
 # thunar - gui file manager from xfce
 # stow - tool for managing the installation of multiple software packages in the same run-time directory tree
+# orage - calendar app
 apt install -y build-essential \
                module-assistant \
                net-tools \
@@ -31,6 +32,7 @@ apt install -y build-essential \
                gnupg2 \
                dh-autoreconf \
                default-jdk \
+               ffmpeg \
                i3 \
                xterm \
                dunst \
@@ -58,7 +60,8 @@ apt install -y build-essential \
                vlc \
                wkhtmltopdf \
                mc \
-               thunar 
+               thunar \
+               orage
 
 
 # ripgrep (NOTE: from 18.10 available through standard packaging)
