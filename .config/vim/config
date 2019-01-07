@@ -332,6 +332,9 @@ set completeopt=longest,menuone
 
 let g:buftabline_numbers = 1 " show buffer numbers in tab line
 
+" search for tags file up to home directory
+set tags+=tags;$HOME
+
 " GVim settings
 set guioptions-=m "remove menu bar
 set guioptions-=T "remove toolbar
