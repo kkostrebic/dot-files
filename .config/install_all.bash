@@ -14,6 +14,8 @@ apt update
 # thunar - gui file manager from xfce
 # stow - tool for managing the installation of multiple software packages in the same run-time directory tree
 # orage - calendar app
+# slop - slop (Select Operation) is an application that queries for a selection from the user and prints the region to stdout
+# maim - maim (make image) takes screenshots of your desktop. It has options to take only a region, and relies on slop to query for regions
 apt install -y build-essential \
                module-assistant \
                net-tools \
@@ -61,7 +63,9 @@ apt install -y build-essential \
                wkhtmltopdf \
                mc \
                thunar \
-               orage
+               orage \
+               slop \
+               maim
 
 
 # ripgrep (NOTE: from 18.10 available through standard packaging)
