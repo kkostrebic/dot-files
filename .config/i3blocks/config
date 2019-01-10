@@ -146,6 +146,20 @@ format=json
 interval=once
 signal=10
 
+[exercise]
+full_text=
+# command=$I3BLOCKS_CONFIG_DIR/commands/exercise_handler.bash
+interval=3600
+color=#00FFFF
+format=json
+
+[pomodoro inidicator]
+full_text=
+command=$I3BLOCKS_CONFIG_DIR/commands/pomodoro_handler.bash
+interval=1500
+color=#00FFFF
+format=json
+
 # Notification indicator
 [dunstindicator]
 full_text=

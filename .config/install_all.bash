@@ -32,11 +32,13 @@ apt install -y build-essential \
                curl \
                wget \
                gnupg2 \
+               rename \
                dh-autoreconf \
                default-jdk \
                ffmpeg \
                i3 \
                xterm \
+               libnotify-bin \
                dunst \
                rofi \
                tmux \                 
@@ -68,7 +70,7 @@ apt install -y build-essential \
                maim
 
 
-# ripgrep (NOTE: from 18.10 available through standard packaging)
+# ripgrep (NOTE: from 18.10 or debian/buster available through standard packaging)
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb
 sudo dpkg -i ripgrep_0.10.0_amd64.deb
 
