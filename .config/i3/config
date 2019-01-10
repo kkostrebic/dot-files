@@ -169,6 +169,8 @@ bindsym Control+Mod1+l exec i3lock -c 000000
 # bindsym XF86AudioNext exec playerctl next
 # bindsym XF86AudioPrev exec playerctl previous
 
+bindsym XF86Calculator exec xterm -e irb --noprompt
+
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
 
 bindsym Mod1+Shift exec pkill -SIGRTMIN+13 i3blocks

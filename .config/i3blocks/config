@@ -181,15 +181,12 @@ signal=13
 format=json
 
 # Date Time
-#
 [time]
 command=$I3BLOCKS_CONFIG_DIR/commands/calendar_handler.bash
 interval=5
 
 [shutdown_menu]
 full_text=
-# If you are using FontAwesome, we recommend the power-off icon:
-# http://fontawesome.io/icon/power-off/
 command=$I3BLOCKS_CONFIG_DIR/commands/shutdown_menu.bash
 
 [separator]
