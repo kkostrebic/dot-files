@@ -25,7 +25,7 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 # command=/usr/share/i3blocks/$BLOCK_NAME
-separator_block_width=25
+separator_block_width=22
 markup=none
 color=#555555
 separator=false
@@ -214,5 +214,5 @@ color=#22AADD
 full_text=
 command=$I3BLOCKS_CONFIG_DIR/commands/shutdown_menu.bash
 
-# [separator]
-# full_text=
+[separator]
+full_text=
