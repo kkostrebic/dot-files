@@ -15,7 +15,7 @@ else
   elif [[ $_skip_initial -eq 1 ]]; then
     printf '{"full_text":"", "color":"#555555", "_enabled":1, "_skip_initial":0}\n'
   else
-    notify-send -t 5000 -c "silent" "Take look away from your monitor"
+    notify-send -t 5000 -c "silent" "Take your eyes off the screen"
     printf '{"full_text":"", "color":"#00FFFF", "_enabled":1, "_skip_initial":0}\n'
   fi
 fi
