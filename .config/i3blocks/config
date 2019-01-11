@@ -25,9 +25,10 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 # command=/usr/share/i3blocks/$BLOCK_NAME
-separator_block_width=20
+separator_block_width=25
 markup=none
 color=#555555
+separator=false
 
 # Volume indicator
 #
@@ -132,6 +133,52 @@ interval=30
 #label=TEMP
 #interval=10
 
+[volume control]
+full_text=
+command=exec pavucontrol; echo ;
+
+[bluetooth]
+full_text=
+command=exec blueman-manager &>/dev/null; echo ;
+
+[wireless]
+full_text=
+command=xterm -e nmtui; echo ;
+
+
+[separator]
+full_text=|
+color=#22AADD
+
+# Mail indicator
+[mail]
+full_text=
+command=$I3BLOCKS_CONFIG_DIR/commands/mail_notification_handler.bash
+format=json
+signal=11
+
+[exercise]
+_enabled=0
+_skip_initial=1
+full_text=
+command=$I3BLOCKS_CONFIG_DIR/commands/exercise_handler.bash
+interval=10
+format=json
+
+[pomodoro inidicator]
+_enabled=0
+_skip_initial=1
+full_text=
+command=$I3BLOCKS_CONFIG_DIR/commands/pomodoro_handler.bash
+format=json
+interval=10
+
+# Notification indicator
+[dunstindicator]
+full_text=
+command=$I3BLOCKS_CONFIG_DIR/commands/other_notifications_handler.bash
+format=json
+signal=12
 
 # Key indicators
 #
@@ -146,46 +193,6 @@ format=json
 interval=once
 signal=10
 
-[exercise]
-full_text=
-# command=$I3BLOCKS_CONFIG_DIR/commands/exercise_handler.bash
-interval=3600
-color=#00FFFF
-format=json
-
-[pomodoro inidicator]
-full_text=
-command=$I3BLOCKS_CONFIG_DIR/commands/pomodoro_handler.bash
-interval=1500
-color=#00FFFF
-format=json
-
-# Notification indicator
-[dunstindicator]
-full_text=
-command=$I3BLOCKS_CONFIG_DIR/commands/other_notifications_handler.bash
-format=json
-signal=12
-
-# Mail indicator
-[mail]
-full_text=
-command=$I3BLOCKS_CONFIG_DIR/commands/mail_notification_handler.bash
-format=json
-signal=11
-
-[volume control]
-full_text=
-command=exec pavucontrol; echo ;
-
-[bluetooth]
-full_text=
-command=exec blueman-manager &>/dev/null; echo ;
-
-[wireless]
-full_text=
-command=xterm -e nmtui; echo ;
-
 [keyboardlayout]
 _layouts=us-de-ba-rs
 full_text=US
@@ -199,9 +206,13 @@ format=json
 command=$I3BLOCKS_CONFIG_DIR/commands/calendar_handler.bash
 interval=5
 
+[separator]
+full_text=|
+color=#22AADD
+
 [shutdown_menu]
 full_text=
 command=$I3BLOCKS_CONFIG_DIR/commands/shutdown_menu.bash
 
-[separator]
-full_text=
+# [separator]
+# full_text=

@@ -303,13 +303,20 @@
 #    summary = "foobar"
 #    history_ignore = yes
 
+
 [show-indicator]
     script = ~/.config/dunst/signals/other_notifications_signal.bash
+
+[silent-ignore]
+    category = silent
+    history_ignore = yes
+    script = 
 
 [email-ignore]
     appname = Thunderbird
     history_ignore = yes
     script = ~/.config/dunst/signals/mail_notification_signal.bash
+
 
 #[signed_on]
 #    appname = Pidgin
