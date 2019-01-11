@@ -2,13 +2,13 @@
 
 if [[ $_enabled -eq 0 ]]; then
   if [[ $BLOCK_BUTTON -eq 3 ]]; then
-    printf '{"full_text":"", "color":"#555555", "_enabled":1, "_skip_initial":0}\n'
+    printf '{"full_text":"", "color":"#555555", "_enabled":1, "_skip_initial":0}\n'
   else
     printf '{"full_text":"", "color":"#555555", "_enabled":0, "_skip_initial":0}\n'
   fi
 else
   if [[ $BLOCK_BUTTON -eq 1 ]]; then
-    printf '{"full_text":"", "color":"#555555", "_enabled":1, "_skip_initial":0}\n'
+    printf '{"full_text":"", "color":"#555555", "_enabled":1, "_skip_initial":0}\n'
   elif [[ $BLOCK_BUTTON -eq 3 ]]; then
     printf '{"full_text":"", "color":"#555555", "_enabled":0, "_skip_initial":0}\n'
   elif [[ $_skip_initial -eq 1 ]]; then
