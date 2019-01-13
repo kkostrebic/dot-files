@@ -19,11 +19,11 @@ function response {
 }
 
 function enable_notification_daemon {
-  exec -c dunst
+  killall -SIGUSR2 dunst
 }
 
 function disable_notification_daemon {
-  killall dunst
+  killall -SIGUSR1 dunst
 }
 
 function show_new_notifications {
@@ -35,25 +35,55 @@ function show_new_notifications {
   done
 }
 
-if [[ $BLOCK_BUTTON -eq $left_click ]] && [[ $_new_notifications -gt 0 ]]; then
-  show_new_notifications
-  response "$bell" "$gray" 0 $yes
-elif [[ $BLOCK_BUTTON -eq $right_click ]]; then
-  case $_enabled in
-    $yes)
+function handle_enabled_state {
+  if [[ -z "$BLOCK_BUTTON" ]]; then
+    # if script is triggered with signal (instead of click) 
+    # increment number of new notifications and show new notification indicator
+    ((_new_notifications = _new_notifications + 1))
+    response "$bell" "$turquoise" $_new_notifications $yes
+    return
+  fi
+  
+  case $BLOCK_BUTTON in 
+    $left_click)
+      if [[ $_new_notifications -gt 0 ]]; then
+        show_new_notifications
+        response "$bell" "$gray" 0 $yes
+      else
+        response "$bell" "$gray" 0 $yes
+      fi
+      ;;
+    $right_click)
       disable_notification_daemon
       response "$bell_slash" "$gray" 0 $no
       ;;
-    $no)
-      enable_notification_daemon
+    *)
       response "$bell" "$gray" 0 $yes
       ;;
   esac
-elif [[ $BLOCK_BUTTON -eq $no_click ]]; then
-  # if script is triggered with signal (instead of click) 
-  # increment number of new notifications and show new notification indicator
-  ((_new_notifications = _new_notifications + 1))
-  response "$bell" "$turquoise" $_new_notifications $yes
-fi
+}
+
+function handle_disabled_state {
+  case $BLOCK_BUTTON in 
+    $right_click)
+      # enable notifications on right click (if those are disabled)
+      enable_notification_daemon
+      response "$bell" "$gray" 0 $yes
+      ;;
+    *)
+      # stay disabled for any other value
+      response "$bell_slash" "$gray" 0 $no
+      ;;
+  esac
+}
+
+case $_enabled in
+  $yes)
+    handle_enabled_state
+    ;;
+  $no)
+    handle_disabled_state
+    ;;
+esac
 
 exit 0

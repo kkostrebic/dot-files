@@ -173,7 +173,8 @@ bindsym XF86Calculator exec xterm -e irb --noprompt
 
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
 
-bindsym Mod1+Shift exec pkill -SIGRTMIN+13 i3blocks
+# TODO: Find some appropriate shortcut for keyboard layout change
+# bindsym Mod1+Shift exec pkill -SIGRTMIN+13 i3blocks
 
 # Use xprop command to get proper wm class
 # Make volume control float window
