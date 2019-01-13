@@ -166,10 +166,10 @@ interval=3600
 format=json
 
 [pomodoro inidicator]
-_enabled=0
+_enabled=1
 _skip_initial=1
 full_text=
-command=$I3BLOCKS_CONFIG_DIR/commands/pomodoro_handler.bash
+command=$I3BLOCKS_CONFIG_DIR/commands/pomodoro_handler.sh
 format=json
 interval=1500
 
