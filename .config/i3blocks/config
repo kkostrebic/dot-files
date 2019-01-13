@@ -25,10 +25,10 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 # command=/usr/share/i3blocks/$BLOCK_NAME
-separator_block_width=22
 markup=none
 color=#555555
 separator=false
+separator_block_width=22
 
 # Volume indicator
 #
@@ -175,7 +175,9 @@ interval=1500
 
 # Notification indicator
 [dunstindicator]
-full_text=
+_enabled=1
+_new_notifications=0
+full_text=
 command=$I3BLOCKS_CONFIG_DIR/commands/other_notifications_handler.bash
 format=json
 signal=12
@@ -187,7 +189,7 @@ signal=12
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 [keyindicator]
-full_text=CAPS
+full_text=
 command=$I3BLOCKS_CONFIG_DIR/commands/key_notification_handler.bash
 format=json
 interval=once
