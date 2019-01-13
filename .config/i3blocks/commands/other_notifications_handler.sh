@@ -9,25 +9,27 @@ no=0
 yes=1
 gray="#555555"
 turquoise="#00FFFF"
+no_click=0
 left_click=1
 right_click=3
 
-function print_json {
+function response {
   message='{ "full_text":"%s", "color":"%s", "_new_notifications":%d, "_enabled":%d}\n'
   printf "$message" "$1" "$2" "$3" "$4"
 }
 
-function start_notification_daemon {
+function enable_notification_daemon {
   exec -c dunst
 }
 
-function stop_notification_daemon {
+function disable_notification_daemon {
   killall dunst
 }
 
 function show_new_notifications {
   start=1
   while [[ $start -le $_new_notifications ]]; do 
+    # Use dunst shortcut (ctrl+grave) to get latest notification messages
     xdotool key Ctrl+grave
     ((start = start + 1)) 
   done
@@ -35,21 +37,23 @@ function show_new_notifications {
 
 if [[ $BLOCK_BUTTON -eq $left_click ]] && [[ $_new_notifications -gt 0 ]]; then
   show_new_notifications
-  print_json "$bell" "$gray" 0 $yes
+  response "$bell" "$gray" 0 $yes
 elif [[ $BLOCK_BUTTON -eq $right_click ]]; then
   case $_enabled in
     $yes)
-      stop_notification_daemon
-      print_json "$bell_slash" "$gray" 0 $no
+      disable_notification_daemon
+      response "$bell_slash" "$gray" 0 $no
       ;;
     $no)
-      print_json "$bell" "$gray" 0 $yes
-      start_notification_daemon
+      enable_notification_daemon
+      response "$bell" "$gray" 0 $yes
       ;;
   esac
-elif [[ $BLOCK_BUTTON -eq 0 ]]; then
+elif [[ $BLOCK_BUTTON -eq $no_click ]]; then
+  # if script is triggered with signal (instead of click) 
+  # increment number of new notifications and show new notification indicator
   ((_new_notifications = _new_notifications + 1))
-  print_json "$bell" "$turquoise" $_new_notifications $yes
+  response "$bell" "$turquoise" $_new_notifications $yes
 fi
 
 exit 0
