@@ -158,7 +158,7 @@ format=json
 signal=11
 
 [exercise]
-_enabled=0
+_enabled=1
 _skip_initial=1
 full_text=
 command=$I3BLOCKS_CONFIG_DIR/commands/exercise_handler.bash

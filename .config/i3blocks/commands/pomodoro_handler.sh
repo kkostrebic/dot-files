@@ -34,7 +34,7 @@ function skip_initial {
         response $eye $gray $yes $no
         ;;
       $no)
-        response $eye_slash $gray $yes $no
+        response $eye_slash $gray $no $no
         ;;
     esac
 
