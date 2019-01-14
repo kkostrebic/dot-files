@@ -214,7 +214,7 @@ color=#22AADD
 
 [shutdown_menu]
 full_text=
-command=$I3BLOCKS_CONFIG_DIR/commands/shutdown_menu.bash
+command=$I3BLOCKS_CONFIG_DIR/commands/shutdown_menu.sh
 
 [separator]
 full_text=
