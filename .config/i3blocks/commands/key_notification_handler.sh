@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 CAPS=$(xset -q | grep Caps | awk '{ print $4 }')
 

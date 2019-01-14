@@ -190,7 +190,7 @@ signal=12
 # bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 [keyindicator]
 full_text=
-command=$I3BLOCKS_CONFIG_DIR/commands/key_notification_handler.bash
+command=$I3BLOCKS_CONFIG_DIR/commands/key_notification_handler.sh
 format=json
 interval=once
 signal=10
