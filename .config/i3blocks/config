@@ -198,7 +198,7 @@ signal=10
 [keyboardlayout]
 _layouts=us-de-ba-rs
 full_text=US
-command=$I3BLOCKS_CONFIG_DIR/commands/keyboard_layout_indicator_handler.bash
+command=$I3BLOCKS_CONFIG_DIR/commands/keyboard_layout_indicator_handler.sh
 interval=once
 signal=13
 format=json

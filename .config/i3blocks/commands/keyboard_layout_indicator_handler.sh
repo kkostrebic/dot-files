@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 layout=${_layouts:0:2}
 layouts=${_layouts:3:10}-$layout
