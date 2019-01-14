@@ -161,7 +161,7 @@ signal=11
 _enabled=1
 _skip_initial=1
 full_text=
-command=$I3BLOCKS_CONFIG_DIR/commands/exercise_handler.bash
+command=$I3BLOCKS_CONFIG_DIR/commands/exercise_handler.sh
 interval=3600
 format=json
 
