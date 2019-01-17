@@ -25,9 +25,10 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 # command=/usr/share/i3blocks/$BLOCK_NAME
-separator_block_width=20
 markup=none
 color=#555555
+separator=false
+separator_block_width=22
 
 # Volume indicator
 #
@@ -132,34 +133,6 @@ interval=30
 #label=TEMP
 #interval=10
 
-
-# Key indicators
-#
-# Add the following bindings to i3 config file:
-#
-# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-[keyindicator]
-full_text=CAPS
-command=$I3BLOCKS_CONFIG_DIR/commands/key_notification_handler.bash
-format=json
-interval=once
-signal=10
-
-# Notification indicator
-[dunstindicator]
-full_text=
-command=$I3BLOCKS_CONFIG_DIR/commands/other_notifications_handler.bash
-format=json
-signal=12
-
-# Mail indicator
-[mail]
-full_text=
-command=$I3BLOCKS_CONFIG_DIR/commands/mail_notification_handler.bash
-format=json
-signal=11
-
 [volume control]
 full_text=
 command=exec pavucontrol; echo ;
@@ -172,19 +145,76 @@ command=exec blueman-manager &>/dev/null; echo ;
 full_text=
 command=xterm -e nmtui; echo ;
 
+
+[separator]
+full_text=|
+color=#22AADD
+
+# Mail indicator
+[mail]
+full_text=
+command=$I3BLOCKS_CONFIG_DIR/commands/mail_notification_handler.sh
+format=json
+signal=11
+
+[exercise]
+_enabled=1
+_skip_initial=1
+full_text=
+command=$I3BLOCKS_CONFIG_DIR/commands/exercise_handler.sh
+interval=3600
+format=json
+
+[pomodoro inidicator]
+_enabled=1
+_skip_initial=1
+full_text=
+command=$I3BLOCKS_CONFIG_DIR/commands/pomodoro_handler.sh
+format=json
+interval=1500
+
+# Notification indicator
+[dunstindicator]
+_enabled=1
+_new_notifications=0
+full_text=
+command=$I3BLOCKS_CONFIG_DIR/commands/other_notifications_handler.sh
+format=json
+signal=12
+
+# Key indicators
+#
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+[keyindicator]
+full_text=
+command=$I3BLOCKS_CONFIG_DIR/commands/key_notification_handler.sh
+format=json
+interval=once
+signal=10
+
 [keyboardlayout]
 _layouts=us-de-ba-rs
 full_text=US
-command=$I3BLOCKS_CONFIG_DIR/commands/keyboard_layout_indicator_handler.bash
+command=$I3BLOCKS_CONFIG_DIR/commands/keyboard_layout_indicator_handler.sh
 interval=once
 signal=13
 format=json
 
 # Date Time
-#
 [time]
-command=$I3BLOCKS_CONFIG_DIR/commands/calendar_handler.bash
+command=$I3BLOCKS_CONFIG_DIR/commands/calendar_handler.sh
 interval=5
+
+[separator]
+full_text=|
+color=#22AADD
+
+[shutdown_menu]
+full_text=
+command=$I3BLOCKS_CONFIG_DIR/commands/shutdown_menu.sh
 
 [separator]
 full_text=
