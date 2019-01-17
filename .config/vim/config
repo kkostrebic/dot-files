@@ -246,6 +246,7 @@ map <C-n> :NERDTreeToggle<CR>
 " rubocop (rvm @global do gem install rubocop)
 " prettier (npm --global install prettier)
 " tidy (apt install tidy)
+" shfmt (go get -u mvdan.cc/sh/cmd/shfmt)
 noremap <F3> :Autoformat<CR>
 let g:formatdef_ruby_formatter = "'rubocop --fix-layout -o /dev/null -s '.bufname('%').' \| sed -n 2,\\$p'"
 let g:formatters_ruby = ['ruby_formatter']
@@ -261,6 +262,11 @@ let g:formatters_html = ['tidy_html']
 let g:formatters_xml = ['tidy_xml']
 let g:formatters_svg = ['tidy_xml']
 let g:formatters_xhtml = ['tidy_xhtml']
+let g:formatters_sh = ['shfmt']
+
+" w0rp/ale settings
+let g:ale_set_balloons = 0
+let g:ale_completion_enabled = 0
 
 set mouse=a             " mouse functionality enabled
 " set cursorline          " highlight current line
