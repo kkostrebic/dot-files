@@ -198,8 +198,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Directory and file navigation plugin
 Plugin 'scrooloose/nerdtree'
-" Plugin 'Shougo/vimfiler.vim'
-" Plugin 'tpope/vim-vinegar.git'
 
 " git plugin
 Plugin 'tpope/vim-fugitive'
@@ -219,20 +217,13 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " c++ syntax highlighting
 " Plugin 'octol/vim-cpp-enhanced-highlight'
 
-" Database access to many DMBS
-Plugin 'dbext.vim'
-
 " Elegant buffer explorer
 Plugin 'ap/vim-buftabline'
 
 " Provide easy code formatting
 Plugin 'Chiel92/vim-autoformat'
 
-" A CODE-COMPLETION ENGINE FOR VIM
-" Plugin 'valloric/youcompleteme'
-
-" A Vim plugin which shows a git diff in the gutter (sign column) 
-" Plugin 'airblade/vim-gitgutter'
+Plugin 'w0rp/ale'
 
 " Edit large files quickly
 Plugin 'vim-scripts/LargeFile'
@@ -249,7 +240,27 @@ filetype plugin indent on    " required
 
 
 map <C-n> :NERDTreeToggle<CR>
+
+" chiel92/vim-autoformat settings
+" dependencies:
+" rubocop (rvm @global do gem install rubocop)
+" prettier (npm --global install prettier)
+" tidy (apt install tidy)
 noremap <F3> :Autoformat<CR>
+let g:formatdef_ruby_formatter = "'rubocop --fix-layout -o /dev/null -s '.bufname('%').' \| sed -n 2,\\$p'"
+let g:formatters_ruby = ['ruby_formatter']
+let g:formatters_javascript = ['prettier']
+let g:formatters_json = ['prettier']
+let g:formatters_css = ['prettier']
+let g:formatters_scss = ['prettier']
+let g:formatters_less = ['prettier']
+let g:formatters_typescript = ['prettier']
+let g:formatters_markdown = ['prettier']
+let g:formatters_graphql = ['prettier']
+let g:formatters_html = ['tidy_html']
+let g:formatters_xml = ['tidy_xml']
+let g:formatters_svg = ['tidy_xml']
+let g:formatters_xhtml = ['tidy_xhtml']
 
 set mouse=a             " mouse functionality enabled
 " set cursorline          " highlight current line
