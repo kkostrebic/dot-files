@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # if [ -e $HOME/.myprofile ]; then
 #   source $HOME/.myprofile

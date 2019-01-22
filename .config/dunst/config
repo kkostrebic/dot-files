@@ -305,7 +305,7 @@
 
 
 [show-indicator]
-    script = ~/.config/dunst/signals/other_notifications_signal.bash
+    script = ~/.config/dunst/signals/other_notifications_signal.sh
 
 [silent-ignore]
     category = silent
@@ -315,7 +315,7 @@
 [email-ignore]
     appname = Thunderbird
     history_ignore = yes
-    script = ~/.config/dunst/signals/mail_notification_signal.bash
+    script = ~/.config/dunst/signals/mail_notification_signal.sh
 
 
 #[signed_on]

@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)"
 CONFIG_DIR=$HOME/.config/zsh

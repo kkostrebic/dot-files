@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 git clone https://github.com/vivien/i3blocks
 cd i3blocks
@@ -8,5 +8,5 @@ make
 make install
 
 rm -rf i3blocks
-cd /usr/local/stow 
+cd /usr/local/stow
 stow i3blocks
