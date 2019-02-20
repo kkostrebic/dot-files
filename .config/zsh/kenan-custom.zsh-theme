@@ -23,12 +23,12 @@
 # FULL_PATH_='%{'$'\e''[96m%}$(pwd) '
 # Get the host name (first 4 chars)
 # HOST_PROMPT_='%{'$'\e''[96m%}%c '
-GIT_PROMPT_="%{$fg_bold[blue]%}\$(git_prompt_info)%{$reset_color%}"
+GIT_PROMPT_="\$(git_prompt_info)%{$reset_color%}"
 NEW_LINE='%{'$'\033''[93m%}$ %{$reset_color%}'
 
 PROMPT="$GIT_PROMPT_$NEW_LINE"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%})%{$fg[yellow]%}✗ %{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%} ✗ "
+ZSH_THEME_GIT_PROMPT_CLEAN=" "
