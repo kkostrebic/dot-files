@@ -109,5 +109,13 @@ fi
 DISABLE_AUTO_TITLE="true"
 
 precmd() {
-  print -Pn "\e]0;(\$(rvm-prompt s i v g)) %~\a "
+  if which rvm-prompt &>/dev/null; then
+    RUBY_VER="($(rvm-prompt s i v g))"
+  elif which ruby &>/dev/null; then
+    RUBY_VER="(${$(ruby -v):0:10})"
+  else 
+    RUBY_VER="(no-ruby)"
+  fi
+
+  print -Pn "\e]0;\$RUBY_VER %~\a "
 }
