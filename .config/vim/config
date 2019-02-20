@@ -199,6 +199,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Directory and file navigation plugin
 Plugin 'scrooloose/nerdtree'
 
+" Golang support
+Plugin 'fatih/vim-go'
+
 " git plugin
 Plugin 'tpope/vim-fugitive'
 " rails.vim: Ruby on Rails power tools

@@ -19,6 +19,7 @@ apt install -y \
   build-essential \
   module-assistant \
   net-tools \
+  golang \
   xinit \
   iw \
   wireless-tools \
