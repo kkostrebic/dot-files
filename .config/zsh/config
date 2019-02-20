@@ -104,3 +104,10 @@ export NVM_DIR="$HOME/.nvm"
 if [ -e ~/.myprofile ]; then
   source ~/.myprofile
 fi
+
+# Disable oh-my-zsh auto title
+DISABLE_AUTO_TITLE="true"
+
+precmd() {
+  print -Pn "\e]0;(\$(rvm-prompt s i v g)) %~\a "
+}
