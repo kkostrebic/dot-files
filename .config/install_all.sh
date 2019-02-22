@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-apt update
+sudo apt update
 
 # i3lock - screen locker
 # xdotool - fake keyboard/mouse input, window management, etc.
@@ -15,7 +15,7 @@ apt update
 # orage - calendar app
 # slop - slop (Select Operation) is an application that queries for a selection from the user and prints the region to stdout
 # maim - maim (make image) takes screenshots of your desktop. It has options to take only a region, and relies on slop to query for regions
-apt install -y \
+sudo apt install -y \
   build-essential \
   module-assistant \
   net-tools \
@@ -46,6 +46,7 @@ apt install -y \
   vim-gtk3 \
   i3lock \
   stow \
+  ripgrep \
   x11-xserver-utils \
   pavucontrol \
   network-manager \
@@ -71,8 +72,8 @@ apt install -y \
 
 
 # ripgrep (NOTE: from 18.10 or debian/buster available through standard packaging)
-curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb
-sudo dpkg -i ripgrep_0.10.0_amd64.deb
+# curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb
+# sudo dpkg -i ripgrep_0.10.0_amd64.deb
 
 # RVM
 gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
@@ -85,6 +86,10 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 ./zsh/install.bash
 
 m-a prepare
+
+# -------
+# libvips - fast and less memory hungry library (than imagemagick) for image processing (https://jcupitt.github.io/libvips/install.html)
+# -------
 
 # slack
 # wireshark
