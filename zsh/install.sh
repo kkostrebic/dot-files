@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # Install zsh
-apt install zsh -y
+sudo apt install zsh -y
 
 # Use ZSH variable to set destination directory for oh-my-zsh - default $HOME/.oh-my-zsh
 ZSH=$HOME/.oh-my-zsh

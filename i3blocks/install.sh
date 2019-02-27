@@ -5,8 +5,8 @@ cd i3blocks
 ./autogen.sh
 ./configure --prefix=/usr/local/stow/i3blocks
 make
-make install
+sudo make install
 
 rm -rf i3blocks
 cd /usr/local/stow
-stow i3blocks
+sudo stow i3blocks
