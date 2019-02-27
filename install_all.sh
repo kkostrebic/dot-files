@@ -82,8 +82,8 @@ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D69
 # NVM
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
-./i3blocks/install.bash
-./zsh/install.bash
+./i3blocks/install.sh
+./zsh/install.sh
 
 sudo m-a prepare
 
