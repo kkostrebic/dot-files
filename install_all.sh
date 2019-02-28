@@ -47,6 +47,7 @@ sudo apt install -y \
   i3lock \
   stow \
   ripgrep \
+  xserver-xorg \
   x11-xserver-utils \
   pavucontrol \
   network-manager \
@@ -70,6 +71,7 @@ sudo apt install -y \
   slop \
   maim
 
+sudo m-a prepare
 
 # ripgrep (NOTE: from 18.10 or debian/buster available through standard packaging)
 # curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb
@@ -85,7 +87,6 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 ./i3blocks/install.sh
 ./zsh/install.sh
 
-sudo m-a prepare
 
 # -------
 # libvips - fast and less memory hungry library (than imagemagick) for image processing (https://jcupitt.github.io/libvips/install.html)
