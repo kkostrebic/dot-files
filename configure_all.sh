@@ -10,4 +10,4 @@ $DIR/i3blocks/configure.sh
 $DIR/rofi/configure.sh
 $DIR/dunst/configure.sh
 $DIR/xterm/configure.sh
-
+$DIR/ctags/configure.sh
