@@ -88,6 +88,9 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 ./zsh/install.sh
 
 
+# Create ssh key
+# ssh-keygen -t rsa -b 4096
+
 # -------
 # libvips - fast and less memory hungry library (than imagemagick) for image processing (https://jcupitt.github.io/libvips/install.html)
 # -------
