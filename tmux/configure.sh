@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)"
-CONFIG_DIR=$HOME/.config/tmux
+CONFIG_DIR=$HOME/tmux
 
 # TODO: - think of incremental backup...
 mv -u $CONFIG_DIR/config $CONFIG_DIR/config.old 2>/dev/null

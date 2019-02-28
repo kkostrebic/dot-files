@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)"
-CONFIG_DIR=$HOME/.config/i3blocks
+CONFIG_DIR=$HOME/i3blocks
 
 # TODO: - think of incremental backup...
 rm -f $CONFIG_DIR/config.old $CONFIG_DIR/commands.old
