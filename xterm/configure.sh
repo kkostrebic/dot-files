@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null && pwd)"
-CONFIG_DIR=$HOME/xterm
+CONFIG_DIR=$HOME/.config/xterm
 
 # TODO: - think of incremental backup...
 mv -u $CONFIG_DIR/config $CONFIG_DIR/config.old 2>/dev/null
