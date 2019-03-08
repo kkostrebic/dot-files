@@ -54,6 +54,7 @@ sudo apt install -y \
   blueman \
   xdotool \
   feh \
+  xloadimage \
   mupdf \
   xfonts-base \
   fonts-dejavu-core \
