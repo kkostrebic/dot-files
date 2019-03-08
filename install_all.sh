@@ -69,7 +69,8 @@ sudo apt install -y \
   thunar \
   orage \
   slop \
-  maim
+  maim \
+  tree
 
 sudo m-a prepare
 
