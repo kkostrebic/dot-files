@@ -234,6 +234,9 @@ Plugin 'vim-scripts/LargeFile'
 " Search in files 
 Plugin 'mileszs/ack.vim'
 
+" support for expanding abbreviations for html & css
+Plugin 'mattn/emmet-vim'
+
 " New color theme
 Plugin 'YorickPeterse/happy_hacking.vim'
 
