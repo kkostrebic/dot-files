@@ -69,7 +69,9 @@ sudo apt install -y \
   thunar \
   orage \
   slop \
-  maim
+  maim \
+  tree \
+  universal-ctags
 
 sudo m-a prepare
 
