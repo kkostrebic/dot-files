@@ -238,7 +238,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'mattn/emmet-vim'
 
 " New color theme
-Plugin 'YorickPeterse/happy_hacking.vim'
+Plugin 'Tallestthomas/guppy.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -311,7 +311,7 @@ set clipboard=unnamed,unnamedplus         " use the system clipboard
 " background to dark to keep same color schema when using vim in tmux
 set t_Co=256 " make sure that terminal has 256 colros enabled
 " set background=dark
-colorscheme happy_hacking " set colorscheme
+colorscheme guppy " set colorscheme
 
 " ============================== 
 " === autoread functionality ===
