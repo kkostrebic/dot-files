@@ -70,7 +70,8 @@ sudo apt install -y \
   orage \
   slop \
   maim \
-  tree
+  tree \
+  universal-ctags
 
 sudo m-a prepare
 
