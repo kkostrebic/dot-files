@@ -93,6 +93,13 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 ./i3blocks/install.sh
 ./zsh/install.sh
 
+# Install AMD graphic card drivers (https://wiki.debian.org/AtiHowTo):
+# - Add "contrib" and "non-free" components to /etc/apt/sources.list: 
+# deb http://deb.debian.org/debian buster main contrib non-free
+# - Update the list of available packages: 
+# apt-get update
+# - Install the firmware-linux-nonfree, libgl1-mesa-dri and xserver-xorg-video-ati:
+# apt-get install firmware-linux-nonfree libgl1-mesa-dri xserver-xorg-video-ati
 
 # Create ssh key
 # ssh-keygen -t rsa -b 4096
