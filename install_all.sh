@@ -15,6 +15,8 @@ sudo apt update
 # orage - calendar app
 # slop - slop (Select Operation) is an application that queries for a selection from the user and prints the region to stdout
 # maim - maim (make image) takes screenshots of your desktop. It has options to take only a region, and relies on slop to query for regions
+# qutebrowser - keyboard-focused (vi) browser (webkit) with a minimal GUI
+# entr - run arbitrary commands when files change  
 sudo apt install -y \
   build-essential \
   module-assistant \
@@ -72,7 +74,8 @@ sudo apt install -y \
   maim \
   tree \
   universal-ctags \
-  qutebrowser
+  qutebrowser \
+  entr
 
 sudo m-a prepare
 
