@@ -71,7 +71,8 @@ sudo apt install -y \
   slop \
   maim \
   tree \
-  universal-ctags
+  universal-ctags \
+  qutebrowser
 
 sudo m-a prepare
 
