@@ -104,6 +104,11 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 # Create ssh key
 # ssh-keygen -t rsa -b 4096
 
+# Install docker manually 
+# TODO: Docker installation and setting up some base/standard containers should be in seperate bash script
+# https://docs.docker.com/install/linux/docker-ce/debian/
+
+
 # -------
 # libvips - fast and less memory hungry library (than imagemagick) for image processing (https://jcupitt.github.io/libvips/install.html)
 # -------
