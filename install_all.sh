@@ -108,6 +108,21 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 # TODO: Docker installation and setting up some base/standard containers should be in seperate bash script
 # https://docs.docker.com/install/linux/docker-ce/debian/
 
+# Install VirtualBox
+# https://www.virtualbox.org/wiki/Downloads
+
+# Build from source ruby:
+# 1. Remove all ruby packages already installed:
+# $ dpkg -l | grep ruby
+# 2. Install ruby dependencies:
+# $ sudo apt build-dep ruby2.5
+# 3. Download ruby sources (https://www.ruby-lang.org/en/downloads/)
+# 4. Build from sources:
+# $ ./configure --prefix=/usr/local/stow/ruby-2.6.4
+# $ make && make install
+# 5. Switch the ruby versions (in case of several ones) using stow:
+# $ sudo stow -D ruby-2.5.0 # unstow the current version
+# $ sudo stow -R ruby-2.6.4 # stow the new one
 
 # -------
 # libvips - fast and less memory hungry library (than imagemagick) for image processing (https://jcupitt.github.io/libvips/install.html)
