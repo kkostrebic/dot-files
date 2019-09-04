@@ -21,10 +21,10 @@ fi
 APPS="exec xterm -e '$COMMAND'; \
       exec xterm -e '$COMMAND'; \
       exec xterm -e '$COMMAND'; \
-      exec gvim '$WORKING_DIR/index.html'; \
-      exec gvim '$WORKING_DIR/index.css'; \
-      exec gvim '$WORKING_DIR/index.js'; \
+      exec gvim -O '$WORKING_DIR/index.html' '$WORKING_DIR/style.css' '$WORKING_DIR/script.js'; \
       exec google-chrome --new-window 'file://$WORKING_DIR'; \
       exec google-chrome --new-window 'file://$WORKING_DIR';"
 
 i3-msg "$WORKSPACE; append_layout $LAYOUT; $APPS"
+sleep 0.5
+xdotool search --onlyvisible --class "Chrome" windowfocus key F12
