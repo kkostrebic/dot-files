@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 FILE_NAME="frontend-snippets.json"
-FULL_PATH="$(cd "$(dirname "$0")"; pwd -P)"
+FULL_PATH="$(dirname "$(readlink -f "$0")")"
 LAYOUT="$FULL_PATH/$FILE_NAME"
 WORKSPACE="workspace $1"
 
@@ -10,11 +10,10 @@ WORKSPACE="workspace $1"
 # else
 #   WORKING_DIR=$2
 # fi
-
-WORKING_DIR=${2:-~}
+WORKING_DIR=${2:-/tmp/codeplay}
 COMMAND="cd $WORKING_DIR && $SHELL"
 
-if !(-e $WORKING_DIR); then
+if [ ! -d $WORKING_DIR ]; then
   mkdir -p $WORKING_DIR
 fi
 

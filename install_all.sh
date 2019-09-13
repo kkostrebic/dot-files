@@ -124,6 +124,13 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 # $ sudo stow -D ruby-2.5.0 # unstow the current version
 # $ sudo stow -R ruby-2.6.4 # stow the new one
 
+# Install yarn
+# https://yarnpkg.com/lang/en/docs/install/#debian-stable
+
+# Install parcel globally
+# yarn global add parcel-bundler
+# add local packages autoprefixer, cssnano, sanitize.css, sass
+
 # -------
 # libvips - fast and less memory hungry library (than imagemagick) for image processing (https://jcupitt.github.io/libvips/install.html)
 # -------
