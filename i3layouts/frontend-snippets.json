@@ -5,20 +5,55 @@
     "percent": 0.5,
     "type": "con",
     "nodes": [
-
         {
+            // splith split container with 2 children
             "border": "normal",
-            "current_border_width": 1,
             "floating": "auto_off",
-            "name": "[No Name] - GVIM1",
-            "percent": 1,
-            "swallows": [
+            "layout": "splith",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
                 {
-                    "class": "^Gvim$",
-                    "instance": "^gvim$"
+                    "border": "normal",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 1043,
+                       "width": 3840,
+                       "x": 0,
+                       "y": 24
+                    },
+                    "name": "GVIM",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                           "class": "^Gvim$",
+                           "instance": "^gvim$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "normal",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 600,
+                       "width": 800,
+                       "x": 50,
+                       "y": 50
+                    },
+                    "name": "qutebrowser",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                           "class": "^qutebrowser$",
+                           "instance": "^qutebrowser$"
+                       }
+                    ],
+                    "type": "con"
                 }
-            ],
-            "type": "con"
+            ]
         },
 
         {
@@ -41,13 +76,19 @@
                             "border": "normal",
                             "current_border_width": 1,
                             "floating": "auto_off",
-                            "name": "(ruby-2.5.5) ~",
+                            "geometry": {
+                               "height": 1044,
+                               "width": 640,
+                               "x": 0,
+                               "y": 1091
+                            },
+                            "name": "xterm",
                             "percent": 0.5,
                             "swallows": [
-                                {
-                                    "class": "^XTerm$",
-                                    "instance": "^xterm$"
-                                }
+                               {
+                                   "class": "^XTerm$",
+                                   "instance": "^xterm$"
+                               }
                             ],
                             "type": "con"
                         },
@@ -63,13 +104,19 @@
                                     "border": "normal",
                                     "current_border_width": 1,
                                     "floating": "auto_off",
-                                    "name": "(ruby-2.5.5) ~",
+                                    "geometry": {
+                                       "height": 510,
+                                       "width": 640,
+                                       "x": 640,
+                                       "y": 1091
+                                    },
+                                    "name": "xterm",
                                     "percent": 0.5,
                                     "swallows": [
-                                        {
-                                            "class": "^XTerm$",
-                                            "instance": "^xterm$"
-                                        }
+                                       {
+                                           "class": "^XTerm$",
+                                           "instance": "^xterm$"
+                                       }
                                     ],
                                     "type": "con"
                                 },
@@ -77,13 +124,19 @@
                                     "border": "normal",
                                     "current_border_width": 1,
                                     "floating": "auto_off",
-                                    "name": "(ruby-2.5.5) ~/projects/dot-files/i3layouts",
+                                    "geometry": {
+                                       "height": 510,
+                                       "width": 640,
+                                       "x": 640,
+                                       "y": 1625
+                                    },
+                                    "name": "xterm",
                                     "percent": 0.5,
                                     "swallows": [
-                                        {
-                                            "class": "^XTerm$",
-                                            "instance": "^xterm$"
-                                        }
+                                       {
+                                           "class": "^XTerm$",
+                                           "instance": "^xterm$"
+                                       }
                                     ],
                                     "type": "con"
                                 }
@@ -92,36 +145,56 @@
                     ]
                 },
                 {
+                    // splith split container with 1 children
                     "border": "normal",
-                    "current_border_width": 1,
                     "floating": "auto_off",
-                    "name": "New Tab - Google Chrome",
+                    "layout": "splith",
                     "percent": 0.333333333333333,
-                    "swallows": [
+                    "type": "con",
+                    "nodes": [
                         {
-                            "class": "^Google\\-chrome$",
-                            "instance": "^google\\-chrome$"
+                            "border": "normal",
+                            "current_border_width": 1,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 1044,
+                               "width": 1280,
+                               "x": 1280,
+                               "y": 1091
+                            },
+                            "name": "Google Chrome",
+                            "percent": 1,
+                            "swallows": [
+                               {
+                                   "class": "^Google\\-chrome$",
+                                   "instance": "^google\\-chrome$"
+                               }
+                            ],
+                            "type": "con"
                         }
-                    ],
-                    "type": "con"
+                    ]
                 },
                 {
                     "border": "normal",
                     "current_border_width": 1,
                     "floating": "auto_off",
-                    "name": "New Tab - Google Chrome",
+                    "geometry": {
+                       "height": 1044,
+                       "width": 1280,
+                       "x": 2560,
+                       "y": 1091
+                    },
+                    "name": "grid.html - Google Chrome",
                     "percent": 0.333333333333333,
                     "swallows": [
-                        {
-                            "class": "^Google\\-chrome$",
-                            "instance": "^google\\-chrome$"
-                        }
+                       {
+                           "class": "^Google\\-chrome$",
+                           "instance": "^google\\-chrome$"
+                       }
                     ],
                     "type": "con"
                 }
             ]
         }
-
-
     ]
 }

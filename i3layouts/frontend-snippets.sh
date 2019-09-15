@@ -11,16 +11,16 @@ WORKSPACE="workspace $1"
 #   WORKING_DIR=$2
 # fi
 WORKING_DIR=${2:-/tmp/codeplay}
-COMMAND="cd $WORKING_DIR && $SHELL"
 
 if [ ! -d $WORKING_DIR ]; then
   mkdir -p $WORKING_DIR
 fi
 
-APPS="exec xterm -e '$COMMAND'; \
-      exec xterm -e '$COMMAND'; \
-      exec xterm -e '$COMMAND'; \
-      exec gvim -O '$WORKING_DIR/index.html' '$WORKING_DIR/style.css' '$WORKING_DIR/script.js'; \
+APPS="exec xterm -e 'cd $WORKING_DIR && $SHELL'; \
+      exec xterm -e 'cd $WORKING_DIR && $SHELL'; \
+      exec xterm -e 'cd $WORKING_DIR && $SHELL'; \
+      exec cd '$WORKING_DIR' && gvim; \
+      exec qutebrowser; \
       exec google-chrome --new-window 'file://$WORKING_DIR'; \
       exec google-chrome --new-window 'file://$WORKING_DIR';"
 
