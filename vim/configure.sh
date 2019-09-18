@@ -16,6 +16,9 @@ fi
 ln -s $SOURCE_DIR/config $CONFIG_DIR/config
 ln -s $CONFIG_DIR/config $HOME/.vimrc
 
+# make directory for vim swap files
+mkdir -p $HOME/.vim/swp
+
 # Install Vundle plugin and other listed plugins from configuration file
 git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall

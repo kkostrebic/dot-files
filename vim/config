@@ -305,6 +305,7 @@ set smartindent    	" Enable smart-indent
 set smarttab    	" Enable smart-tabs
 set softtabstop=2   " Number of spaces per Tab
 set tabstop=2   
+set directory=$HOME/.vim/swp//  " Place where vim will keep its swap files
 
 set clipboard=unnamed,unnamedplus         " use the system clipboard
 
