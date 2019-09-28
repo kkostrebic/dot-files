@@ -368,3 +368,8 @@ set guioptions-=r "remove right-hand scroll bar
 set guioptions-=L "remove left-hand scroll bar 
 
 let g:AutoPairsFlyMode = 1
+
+hi TabLineSel guibg=DarkGreen
+hi TabLine guibg=Black
+hi StatusLine guibg=White guifg=DarkGreen
+hi StatusLineNC guibg=White guifg=Black
