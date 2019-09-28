@@ -17,6 +17,8 @@ sudo apt update
 # maim - maim (make image) takes screenshots of your desktop. It has options to take only a region, and relies on slop to query for regions
 # qutebrowser - keyboard-focused (vi) browser (webkit) with a minimal GUI
 # entr - run arbitrary commands when files change  
+# cups - Common UNIX Printing System
+# sane - Scanner graphical frontends
 sudo apt install -y \
   build-essential \
   module-assistant \
@@ -29,6 +31,7 @@ sudo apt install -y \
   bluez \
   bluez-tools \
   rfkill \
+  libmagickwand-dev \
   imagemagick \
   subversion \
   git \
@@ -75,7 +78,9 @@ sudo apt install -y \
   tree \
   universal-ctags \
   qutebrowser \
-  entr
+  entr \
+  cups \
+  sane
 
 sudo m-a prepare
 
