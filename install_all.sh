@@ -83,7 +83,8 @@ sudo apt install -y \
   cups \
   sane \
   tidy \
-  libxml2-utils
+  libxml2-utils \
+  shellcheck
 
 sudo m-a prepare
 
