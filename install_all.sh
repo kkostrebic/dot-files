@@ -19,6 +19,7 @@ sudo apt update
 # entr - run arbitrary commands when files change  
 # cups - Common UNIX Printing System
 # sane - Scanner graphical frontends
+# tidy - HTML/XML syntax checker and reformatter
 sudo apt install -y \
   build-essential \
   module-assistant \
@@ -80,7 +81,9 @@ sudo apt install -y \
   qutebrowser \
   entr \
   cups \
-  sane
+  sane \
+  tidy \
+  libxml2-utils
 
 sudo m-a prepare
 
