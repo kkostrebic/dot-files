@@ -278,6 +278,7 @@ let g:ale_completion_enabled = 0
 
 noremap <F3> :ALEFix<CR>
 let g:ale_fixers = {
+\ '*': ["trim_whitespace"],
 \ 'html': ['tidy'],
 \ 'xml': ['xmllint'],
 \ 'css': ['prettier'],
