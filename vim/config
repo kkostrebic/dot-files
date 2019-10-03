@@ -224,9 +224,12 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ap/vim-buftabline'
 
 " Provide easy code formatting
-Plugin 'Chiel92/vim-autoformat'
+" Plugin 'Chiel92/vim-autoformat'
 
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
+
+" Enhanced javascript syntax file for Vim
+" Plugin 'jelera/vim-javascript-syntax'
 
 " Edit large files quickly
 Plugin 'vim-scripts/LargeFile'
@@ -253,26 +256,45 @@ map <C-n> :NERDTreeToggle<CR>
 " prettier (npm --global install prettier)
 " tidy (apt install tidy)
 " shfmt (go get -u mvdan.cc/sh/cmd/shfmt)
-noremap <F3> :Autoformat<CR>
-let g:formatdef_ruby_formatter = "'rubocop --fix-layout -o /dev/null -s '.bufname('%').' \| sed -n 2,\\$p'"
-let g:formatters_ruby = ['ruby_formatter']
-let g:formatters_javascript = ['prettier']
-let g:formatters_json = ['prettier']
-let g:formatters_css = ['prettier']
-let g:formatters_scss = ['prettier']
-let g:formatters_less = ['prettier']
-let g:formatters_typescript = ['prettier']
-let g:formatters_markdown = ['prettier']
-let g:formatters_graphql = ['prettier']
-let g:formatters_html = ['tidy_html']
-let g:formatters_xml = ['tidy_xml']
-let g:formatters_svg = ['tidy_xml']
-let g:formatters_xhtml = ['tidy_xhtml']
-let g:formatters_sh = ['shfmt']
+" let g:formatdef_ruby_formatter = "'rubocop --fix-layout -o /dev/null -s '.bufname('%').' \| sed -n 2,\\$p'"
+" let g:formatters_ruby = ['ruby_formatter']
+" let g:formatters_javascript = ['prettier']
+" let g:formatters_json = ['prettier']
+" let g:formatters_css = ['prettier']
+" let g:formatters_scss = ['prettier']
+" let g:formatters_less = ['prettier']
+" let g:formatters_typescript = ['prettier']
+" let g:formatters_markdown = ['prettier']
+" let g:formatters_graphql = ['prettier']
+" let g:formatters_html = ['tidy_html']
+" let g:formatters_xml = ['tidy_xml']
+" let g:formatters_svg = ['tidy_xml']
+" let g:formatters_xhtml = ['tidy_xhtml']
+" let g:formatters_sh = ['shfmt']
 
-" w0rp/ale settings
+" ale settings
 let g:ale_set_balloons = 0
 let g:ale_completion_enabled = 0
+
+noremap <F3> :ALEFix<CR>
+let g:ale_fixers = {
+\ 'html': ['tidy'],
+\ 'xml': ['xmllint'],
+\ 'css': ['prettier'],
+\ 'scss': ['prettier'],
+\ 'less': ['prettier'],
+\}
+let g:ale_linters = {
+\ 'html': ['tidy','prettier'],
+\ 'xml': ['xmllint'],
+\ 'javascript': ['prettier'],
+\ 'json': ['prettier'], 
+\ 'less': ['prettier'],
+\ 'scss': ['prettier'],
+\ 'ruby': ['rubocop'],
+\ 'yaml': ['prettier'],
+\ 'bash': ['shellcheck']
+\}
 
 set mouse=a             " mouse functionality enabled
 " set cursorline          " highlight current line
@@ -367,7 +389,7 @@ set guioptions-=T "remove toolbar
 set guioptions-=r "remove right-hand scroll bar 
 set guioptions-=L "remove left-hand scroll bar 
 
-let g:AutoPairsFlyMode = 1
+" let g:AutoPairsFlyMode = 1
 
 hi TabLineSel guibg=DarkGreen
 hi TabLine guibg=Black
