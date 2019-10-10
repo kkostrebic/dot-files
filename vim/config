@@ -243,6 +243,12 @@ Plugin 'mattn/emmet-vim'
 " New color theme
 Plugin 'Tallestthomas/guppy.vim'
 
+" This plugin is used for displaying thin vertical lines at each indentation level for code indented with spaces
+" Plugin 'Yggdroot/indentLine'
+
+" Tagbar is a Vim plugin that provides an easy way to browse the tags of the current file and get an overview of its structure.
+Plugin 'majutsushi/tagbar'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
