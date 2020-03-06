@@ -95,15 +95,24 @@ source $ZSH/oh-my-zsh.sh
 
 # export PATH=$PATH
 
+# moved to .myprofile
+#
+# Add yarn bin to PATH
+# export PATH="$PATH:$HOME/.yarn/bin"
+#
+# Latex bin to PATH
+# export PATH=$PATH:/usr/local/texlive/2019/bin/x86_64-linux
+
+if [ -e ~/.myprofile ]; then
+  source ~/.myprofile
+fi
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-if [ -e ~/.myprofile ]; then
-  source ~/.myprofile
-fi
 
 # Disable oh-my-zsh auto title
 DISABLE_AUTO_TITLE="true"
