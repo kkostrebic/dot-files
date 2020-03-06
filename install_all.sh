@@ -20,6 +20,12 @@ sudo apt update
 # cups - Common UNIX Printing System
 # sane - Scanner graphical frontends
 # tidy - HTML/XML syntax checker and reformatter
+# mdadm - tool to administer Linux MD arrays (software RAID)
+# smartmontools - control and monitor storage systems using S.M.A.R.T.
+# texlive-latex-base - A document preparation system
+# tig - text-mode interface for Git
+# samba - SMB/CIFS file, print, and login server for Unix
+# cifs-utils - utilities for managing mounts of CIFS network file systems
 sudo apt install -y \
   build-essential \
   module-assistant \
@@ -84,7 +90,14 @@ sudo apt install -y \
   sane \
   tidy \
   libxml2-utils \
-  shellcheck
+  shellcheck \
+  mdadm \
+  smartmontools \
+  texlive-latex-base \
+  tig \
+  samba \
+  cifs-utils \
+  apache2-utils
 
 sudo m-a prepare
 
@@ -139,6 +152,35 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 # Install parcel globally
 # yarn global add parcel-bundler
 # add local packages autoprefixer, cssnano, sanitize.css, sass
+
+# Install OpenResty from source (https://openresty.org/en/installation.html)
+# Really useful link https://www.digitalocean.com/community/tutorials/how-to-use-the-openresty-web-framework-for-nginx-on-ubuntu-16-04
+# Download source code tarball 
+# Unpack tarball (i.e. tar xzvf openresty-VERSION.tar.gz)
+# Configure with prefix to stow directory (i.e. ./configure -j2 --prefix=/usr/local/stow/openresty-VERSION)
+# Make (i.e. make -j2)
+# Install (i.e. sudo make install)
+# Stow openresty (i.e. cd /usr/local/stow; sudo stow openresty-VERSION)
+# Create systemd service file (from nginx example https://www.nginx.com/resources/wiki/start/topics/examples/systemd/)
+# Enable new systemd service (i.e. sudo systemctl enable openresty.service) 
+# Start systemd service (i.e. sudo systemctl start openresty.service)
+# NOTE: initial configuration files are placed within nginx directory under openresty-VERSION stow directory
+# NOTE: make sure pid file name and location from systemd service file is matched the one in nginx.conf (default logs/nginx.pid) - link to correct location also works
+# NOTE: create sites-available and sites-enabled directories and include sites-enabled at the end of http block in nginx.conf (i.e. include /etc/nginx/sites-enabled/*)
+
+# Install RVM for multiple users (production for supporting several projects running different ruby versions and gemsets on the same server)
+# https://rvm.io/rvm/install
+# sudo gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+# \curl -sSL https://get.rvm.io | sudo bash -s stable
+# If the install script is run prefixed with sudo, RVM will automatically install into /usr/local/rvm
+
+# Install python3 related stuff
+# sudo apt install python python3
+# sudo apt install python3-venv - virtual environments 
+# Install pip (oackage manager for python):
+# curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+# python get-pip.py
+# put the scripts to the PATH (usually pip, wheel are install under /home/helmut/.local/bin)
 
 # -------
 # libvips - fast and less memory hungry library (than imagemagick) for image processing (https://jcupitt.github.io/libvips/install.html)
