@@ -187,6 +187,9 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 # 2. create wrapper executable script (also explained in step 1.)
 # 3. link the script from step 2. to stow qutebrowser/bin folder
 
+# Install rust lang
+# https://www.rust-lang.org/tools/install
+
 # -------
 # libvips - fast and less memory hungry library (than imagemagick) for image processing (https://jcupitt.github.io/libvips/install.html)
 # -------
