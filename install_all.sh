@@ -84,7 +84,6 @@ sudo apt install -y \
   maim \
   tree \
   universal-ctags \
-  qutebrowser \
   entr \
   cups \
   sane \
@@ -97,7 +96,8 @@ sudo apt install -y \
   tig \
   samba \
   cifs-utils \
-  apache2-utils
+  apache2-utils \
+  asciidoc 
 
 sudo m-a prepare
 
@@ -181,6 +181,11 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 # curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 # python get-pip.py
 # put the scripts to the PATH (usually pip, wheel are install under /home/helmut/.local/bin)
+
+# Install qutebrowser from source (with virtualenv)
+# 1. https://qutebrowser.org/doc/install.html#tox
+# 2. create wrapper executable script (also explained in step 1.)
+# 3. link the script from step 2. to stow qutebrowser/bin folder
 
 # -------
 # libvips - fast and less memory hungry library (than imagemagick) for image processing (https://jcupitt.github.io/libvips/install.html)
