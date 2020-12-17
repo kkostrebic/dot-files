@@ -115,6 +115,10 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 ./i3blocks/install.sh
 ./zsh/install.sh
 
+# -------------------------------------------------------------------------------------------------------- #
+# NOTE: i3 should be installed using their own debian repository (https://i3wm.org/docs/repositories.html) #
+# -------------------------------------------------------------------------------------------------------- #
+
 # Install AMD graphic card drivers (https://wiki.debian.org/AtiHowTo):
 # - Add "contrib" and "non-free" components to /etc/apt/sources.list: 
 # deb http://deb.debian.org/debian buster main contrib non-free
