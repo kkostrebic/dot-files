@@ -200,7 +200,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 
 " Golang support
-Plugin 'fatih/vim-go'
+" Plugin 'fatih/vim-go'
 
 " git plugin
 Plugin 'tpope/vim-fugitive'
@@ -237,11 +237,11 @@ Plugin 'vim-scripts/LargeFile'
 " Search in files 
 Plugin 'mileszs/ack.vim'
 
-" support for expanding abbreviations for html & css
+" Support for expanding abbreviations for html & css
 Plugin 'mattn/emmet-vim'
 
-" New color theme
-Plugin 'Tallestthomas/guppy.vim'
+" Color theme
+Plugin 'ts-26a/vim-darkspace'
 
 " This plugin is used for displaying thin vertical lines at each indentation level for code indented with spaces
 " Plugin 'Yggdroot/indentLine'
@@ -256,27 +256,11 @@ filetype plugin indent on    " required
 
 map <C-n> :NERDTreeToggle<CR>
 
-" chiel92/vim-autoformat settings
 " dependencies:
 " rubocop (rvm @global do gem install rubocop)
 " prettier (npm --global install prettier)
 " tidy (apt install tidy)
 " shfmt (go get -u mvdan.cc/sh/cmd/shfmt)
-" let g:formatdef_ruby_formatter = "'rubocop --fix-layout -o /dev/null -s '.bufname('%').' \| sed -n 2,\\$p'"
-" let g:formatters_ruby = ['ruby_formatter']
-" let g:formatters_javascript = ['prettier']
-" let g:formatters_json = ['prettier']
-" let g:formatters_css = ['prettier']
-" let g:formatters_scss = ['prettier']
-" let g:formatters_less = ['prettier']
-" let g:formatters_typescript = ['prettier']
-" let g:formatters_markdown = ['prettier']
-" let g:formatters_graphql = ['prettier']
-" let g:formatters_html = ['tidy_html']
-" let g:formatters_xml = ['tidy_xml']
-" let g:formatters_svg = ['tidy_xml']
-" let g:formatters_xhtml = ['tidy_xhtml']
-" let g:formatters_sh = ['shfmt']
 
 " ale settings
 let g:ale_set_balloons = 0
@@ -306,12 +290,7 @@ let g:ale_linters = {
 set mouse=a             " mouse functionality enabled
 " set cursorline          " highlight current line
 set foldmethod=syntax
-      " 80 character mark
 set ttymouse=xterm2     " mouse support in vim (for iTerm)
-
-" set color to 80 character mark
-autocmd BufRead * if @% != 'Result' | highlight ColorColumn ctermbg=DarkGray | else | set colorcolumn=80 | endif 
-autocmd BufRead * normal zR
 
 set showmatch           " highlight matching [{()}]
 
@@ -340,8 +319,14 @@ set clipboard=unnamed,unnamedplus         " use the system clipboard
 
 " background to dark to keep same color schema when using vim in tmux
 set t_Co=256 " make sure that terminal has 256 colros enabled
-" set background=dark
-colorscheme guppy " set colorscheme
+set background=dark
+set termguicolors
+
+colorscheme darkspace " set colorscheme
+
+highlight ColorColumn guibg=#040404
+set colorcolumn=80
+
 " override gui background color from colorscheme (set it to black)
 hi Normal guibg=#000000
 
@@ -398,7 +383,7 @@ set guioptions-=L "remove left-hand scroll bar
 
 " let g:AutoPairsFlyMode = 1
 
-hi TabLineSel guibg=DarkGreen
-hi TabLine guibg=Black
+hi TabLineSel guibg=DarkGreen guifg=White
+hi TabLine guibg=Black guifg=Gray
 hi StatusLine guibg=White guifg=DarkGreen
 hi StatusLineNC guibg=White guifg=Black
