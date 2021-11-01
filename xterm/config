@@ -28,7 +28,7 @@
 ! ----------------------------------------
 ! This section is originally from:
 ! https://wiki.mpich.org/mpich/index.php/Configure_xterm_Fonts_and_Colors_for_Your_Eyeball 
-XTerm*faceName: Bitstream Vera Serif Mono
+XTerm*faceName: DejaVu Sans Mono
 xterm*faceSize: 11
 xterm*vt100*geometry: 80x60
 xterm*saveLines: 16384
