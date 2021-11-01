@@ -249,6 +249,9 @@ Plugin 'ts-26a/vim-darkspace'
 " Tagbar is a Vim plugin that provides an easy way to browse the tags of the current file and get an overview of its structure.
 Plugin 'majutsushi/tagbar'
 
+" A Vim plugin that manages your tag files (using ctags)
+Plugin 'ludovicchabant/vim-gutentags.git'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -361,6 +364,7 @@ endif
 set statusline=%f " filename
 set statusline+=\ %h%m%r " help buffer tag, modified tag, read only tag
 set statusline+=%= " separator left-right side of status line
+set statusline+=%{gutentags#statusline()} " know when gutentags is generating tags
 set statusline+=\ %l/%L:%c " line-number/total-number-of-lines:column-number
 set statusline+=\ [0x%B] " unicode value of the characted under the cursor
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding} " file encoding
@@ -385,5 +389,7 @@ set guioptions-=L "remove left-hand scroll bar
 
 hi TabLineSel guibg=DarkGreen guifg=White
 hi TabLine guibg=Black guifg=Gray
-hi StatusLine guibg=White guifg=DarkGreen
+hi StatusLine guibg=DarkGreen guifg=White
 hi StatusLineNC guibg=White guifg=Black
+
+set guifont=DejaVu\ Sans\ Mono\ 11
