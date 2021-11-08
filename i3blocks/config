@@ -26,7 +26,7 @@
 # Each block command defaults to the script name to avoid boilerplate.
 # command=/usr/share/i3blocks/$BLOCK_NAME
 markup=none
-color=#555555
+color=#AAAAAA
 separator=false
 separator_block_width=22
 
@@ -137,13 +137,13 @@ interval=30
 full_text=
 command=exec pavucontrol; echo ;
 
-[bluetooth]
-full_text=
-command=exec blueman-manager &>/dev/null; echo ;
+# [bluetooth]
+# full_text=
+# command=exec blueman-manager &>/dev/null; echo ;
 
-[wireless]
-full_text=
-command=xterm -e nmtui; echo ;
+# [wireless]
+# full_text=
+# command=xterm -e nmtui; echo ;
 
 
 [separator]
@@ -151,27 +151,27 @@ full_text=|
 color=#22AADD
 
 # Mail indicator
-[mail]
-full_text=
-command=$I3BLOCKS_CONFIG_DIR/commands/mail_notification_handler.sh
-format=json
-signal=11
+# [mail]
+# full_text=
+# command=$I3BLOCKS_CONFIG_DIR/commands/mail_notification_handler.sh
+# format=json
+# signal=11
 
-[exercise]
-_enabled=1
-_skip_initial=1
-full_text=
-command=$I3BLOCKS_CONFIG_DIR/commands/exercise_handler.sh
-interval=3600
-format=json
+# [exercise]
+# _enabled=0
+# _skip_initial=1
+# full_text=
+# command=$I3BLOCKS_CONFIG_DIR/commands/exercise_handler.sh
+# interval=3600
+# format=json
 
-[pomodoro inidicator]
-_enabled=1
-_skip_initial=1
-full_text=
-command=$I3BLOCKS_CONFIG_DIR/commands/pomodoro_handler.sh
-format=json
-interval=1500
+# [pomodoro inidicator]
+# _enabled=0
+# _skip_initial=1
+# full_text=
+# command=$I3BLOCKS_CONFIG_DIR/commands/pomodoro_handler.sh
+# format=json
+# interval=1500
 
 # Notification indicator
 [dunstindicator]
