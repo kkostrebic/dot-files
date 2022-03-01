@@ -18,7 +18,7 @@ sudo apt update
 # qutebrowser - keyboard-focused (vi) browser (webkit) with a minimal GUI
 # entr - run arbitrary commands when files change  
 # cups - Common UNIX Printing System
-# sane - Scanner graphical frontends
+# sane - Scanner graphical frontends (SANE - Scanner Access Now Easy) is the linux way of scanning
 # tidy - HTML/XML syntax checker and reformatter
 # mdadm - tool to administer Linux MD arrays (software RAID)
 # smartmontools - control and monitor storage systems using S.M.A.R.T.
@@ -79,27 +79,28 @@ sudo apt install -y \
   wkhtmltopdf \
   mc \
   thunar \
-  orage \
   slop \
   maim \
   tree \
   universal-ctags \
   entr \
   cups \
-  sane \
   tidy \
   libxml2-utils \
   shellcheck \
   mdadm \
   smartmontools \
-  texlive-latex-base \
   tig \
   samba \
   cifs-utils \
   apache2-utils \
-  asciidoc 
+  asciidoc
 
 sudo m-a prepare
+
+# sane - install this one when needed manually
+# orage - calendar app removed from debian repository (from bullseye version)
+# texlive-latex-base - no need for latex any more (it consumes too much disk space, and I don't use it that often)
 
 # ripgrep (NOTE: from 18.10 or debian/buster available through standard packaging)
 # curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb
