@@ -1,124 +1,31 @@
 #!/usr/bin/env bash
 
-sudo apt update
-
-# i3lock - screen locker
-# xdotool - fake keyboard/mouse input, window management, etc.
-# mupdf - micro pdf reader
-# wkhtmltopdf - html to pdf
-# feh - image viewer
-# pavucontrol - pulse audio volume control
-# blueman - bluetooth gui manager
-# mc - midnight commander - tui file manager
-# thunar - gui file manager from xfce
-# stow - tool for managing the installation of multiple software packages in the same run-time directory tree
-# orage - calendar app
-# slop - slop (Select Operation) is an application that queries for a selection from the user and prints the region to stdout
-# maim - maim (make image) takes screenshots of your desktop. It has options to take only a region, and relies on slop to query for regions
-# qutebrowser - keyboard-focused (vi) browser (webkit) with a minimal GUI
-# entr - run arbitrary commands when files change  
-# cups - Common UNIX Printing System
-# sane - Scanner graphical frontends (SANE - Scanner Access Now Easy) is the linux way of scanning
-# tidy - HTML/XML syntax checker and reformatter
-# mdadm - tool to administer Linux MD arrays (software RAID)
-# smartmontools - control and monitor storage systems using S.M.A.R.T.
-# texlive-latex-base - A document preparation system
-# tig - text-mode interface for Git
-# samba - SMB/CIFS file, print, and login server for Unix
-# cifs-utils - utilities for managing mounts of CIFS network file systems
-sudo apt install -y \
-  build-essential \
-  module-assistant \
-  net-tools \
-  golang \
-  xinit \
-  iw \
-  wireless-tools \
-  bluetooth \
-  bluez \
-  bluez-tools \
-  rfkill \
-  libmagickwand-dev \
-  imagemagick \
-  subversion \
-  git \
-  curl \
-  wget \
-  gnupg2 \
-  rename \
-  dh-autoreconf \
-  default-jdk \
-  ffmpeg \
-  i3 \
-  xterm \
-  libnotify-bin \
-  dunst \
-  rofi \
-  tmux \
-  vim-gtk3 \
-  i3lock \
-  stow \
-  ripgrep \
-  xserver-xorg \
-  x11-xserver-utils \
-  pavucontrol \
-  network-manager \
-  blueman \
-  xdotool \
-  feh \
-  mupdf \
-  xfonts-base \
-  fonts-dejavu-core \
-  fonts-font-awesome \
-  autoconf \
-  notify-osd \
-  thunderbird \
-  libreoffice \
-  gimp \
-  vlc \
-  wkhtmltopdf \
-  mc \
-  thunar \
-  slop \
-  maim \
-  tree \
-  universal-ctags \
-  entr \
-  cups \
-  tidy \
-  libxml2-utils \
-  shellcheck \
-  mdadm \
-  smartmontools \
-  tig \
-  samba \
-  cifs-utils \
-  apache2-utils \
-  asciidoc
-
 sudo m-a prepare
 
-# sane - install this one when needed manually
-# orage - calendar app removed from debian repository (from bullseye version)
-# texlive-latex-base - no need for latex any more (it consumes too much disk space, and I don't use it that often)
+# Create ssh key
+ssh-keygen -t rsa -b 4096
 
-# ripgrep (NOTE: from 18.10 or debian/buster available through standard packaging)
-# curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb
-# sudo dpkg -i ripgrep_0.10.0_amd64.deb
+# sane - install this one when needed manually
 
 # RVM
 gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 \curl -sSL https://get.rvm.io | bash -s stable
 
+# Install nodejs
+# 1. Download latest LTS version from https://nodejs.org
+# 2. Extract package to desired directory, e.g. ~/Applications
+# 3. Make hard link to bin directory files in /usr/local/stow/nodejs/bin
+# 4. Install it using stow, i.e. stow /usr/local/stow/nodejs
+
+# Install docker manually 
+# TODO: Docker installation and setting up some base/standard containers should be in seperate bash script
+# https://docs.docker.com/install/linux/docker-ce/debian/
+
 # NVM
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+# curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
 ./i3blocks/install.sh
 ./zsh/install.sh
-
-# -------------------------------------------------------------------------------------------------------- #
-# NOTE: i3 should be installed using their own debian repository (https://i3wm.org/docs/repositories.html) #
-# -------------------------------------------------------------------------------------------------------- #
 
 # Install AMD graphic card drivers (https://wiki.debian.org/AtiHowTo):
 # - Add "contrib" and "non-free" components to /etc/apt/sources.list: 
@@ -128,12 +35,6 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 # - Install the firmware-linux-nonfree, libgl1-mesa-dri and xserver-xorg-video-ati:
 # apt-get install firmware-linux-nonfree libgl1-mesa-dri xserver-xorg-video-ati
 
-# Create ssh key
-# ssh-keygen -t rsa -b 4096
-
-# Install docker manually 
-# TODO: Docker installation and setting up some base/standard containers should be in seperate bash script
-# https://docs.docker.com/install/linux/docker-ce/debian/
 
 # Install VirtualBox
 # https://www.virtualbox.org/wiki/Downloads
@@ -201,7 +102,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 
 # slack
 # wireshark
-# clipit - clipboard manager
+# diodon - clipboard manager
 # network-manager-gnome 
 # wicd - network gui manager
 
