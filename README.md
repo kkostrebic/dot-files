@@ -4,15 +4,17 @@
 
 Make sure that startx is properly configured.
 
-Place the following in your login shell initialization file (e.g. ~/.bash_profile for Bash or ~/.zprofile for Zsh):
+Place the following in your login shell initialization file (e.g. `~/.bash_profile` for Bash or `~/.zprofile` for Zsh):
 
+```
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
+```
 
 You can replace the -eq comparison with one like -le 3 (for vt1 to vt3) if you want to use graphical logins on more than one virtual terminal.
 
-Alternative conditions to detect the virtual terminal include "$(tty)" = "/dev/tty1", which does not allow comparison with -le, and "$(fgconsole 2>/dev/null || echo -1)" -eq 1, which does not work in serial consoles. 
+Alternative conditions to detect the virtual terminal include `"$(tty)" = "/dev/tty1"`, which does not allow comparison with -le, and `"$(fgconsole 2>/dev/null || echo -1)" -eq 1`, which does not work in serial consoles. 
 
 ### Unicode characters in VIM
 1. go into INSERT mode.
