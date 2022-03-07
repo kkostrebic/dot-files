@@ -21,6 +21,7 @@
 ### Freedesktop/XDG desktop entry specification 
 
 [Desktop entry specification](https://specifications.freedesktop.org/desktop-entry-spec/latest/)
+
 [Arch wiki](https://wiki.archlinux.org/title/desktop_entries)
 
 The XDG Desktop Entry specification defines a standard for applications to integrate into application menus of desktop environments implementing the XDG Desktop Menu specification. 
