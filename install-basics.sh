@@ -31,7 +31,8 @@ apt install --no-install-recommends -y \
   cifs-utils \
   cups \
   sane \
-  htop
+  htop \
+  acpi
 
 # dialog - displays user-friendly dialog boxes from shell scripts
 # build-essential - Debian package development tools, GNU C++ compiler, GNU C compiler, GNU C development libraries and header files, make (utility for directing compilation)
@@ -62,3 +63,4 @@ apt install --no-install-recommends -y \
 # cups - Common UNIX Printing System
 # sane - scanner graphical frontends
 # htop - interactive processes viewer
+# acpi - displays information on ACPI (Advanced Configuration and Power Interface) devices
