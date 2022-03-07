@@ -128,3 +128,7 @@ precmd() {
 
   print -Pn "\e]0;\$RUBY_VER %~\a "
 }
+
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
