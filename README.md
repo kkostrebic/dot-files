@@ -1,5 +1,9 @@
 ## My dot-files
 
+### Unicode characters in VIM
+1. go into INSERT mode.
+1. Ctrl+v go into ins-special-keys mode.
+1. u2713 insert the Unicode character CHECK MARK (U+2713)
 
 ### VirtualBox Guest Additions on a GUI-less server
 
