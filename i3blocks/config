@@ -99,15 +99,19 @@ separator_block_width=22
 #[load_average]
 #interval=10
 
+[separator]
+full_text=|
+color=#22AADD
+
 # Battery indicator
 #
 # The battery instance defaults to 0.
 [battery]
 command=$I3BLOCKS_CONFIG_DIR/commands/batterybar.sh
-label=bat:
+# label=:
 interval=5
 markup=pango
-min_width=bat: ■■■■■
+min_width=■■■■■
 # Discharging colors low to high
 #C1=#FF0027
 #C2=#FF3B05
@@ -121,6 +125,9 @@ min_width=bat: ■■■■■
 #FULL_COLOR=#FFFFFF
 #AC_COLOR=#535353
 
+[separator]
+full_text=|
+color=#22AADD
 
 # Generic media player support
 #
