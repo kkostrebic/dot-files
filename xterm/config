@@ -29,7 +29,20 @@
 ! This section is originally from:
 ! https://wiki.mpich.org/mpich/index.php/Configure_xterm_Fonts_and_Colors_for_Your_Eyeball 
 XTerm*faceName: DejaVu Sans Mono
-xterm*faceSize: 11
+XTerm*faceSize: 9
+! ! Face sizes for alternates:                                                                                    
+! ! Too Small:                                                                                                   
+XTerm.VT100.faceSize1:  6 
+! ! Small:                                                                                                         
+XTerm.VT100.faceSize2:  8 
+! ! Little Bigger:                                                                                                        
+XTerm.VT100.faceSize3:  12
+! ! Bigger:                                                                                                       
+XTerm.VT100.faceSize4:  16
+! ! Large:                                                                                                        
+XTerm.VT100.faceSize5:  20
+! ! Huge:                                                                                                         
+XTerm.VT100.faceSize6:  24
 xterm*vt100*geometry: 80x60
 xterm*saveLines: 16384
 xterm*loginShell: true
@@ -42,3 +55,7 @@ Xterm*selectToClipboard: true
 XTerm*VT100*translations: #override \
     Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
     Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
+
+XTerm*VT100*translations: #override \
+    Shift Ctrl <Key> Down: smaller-vt-font() \n\
+    Shift Ctrl <Key> Up: larger-vt-font()
