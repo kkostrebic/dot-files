@@ -240,6 +240,9 @@ Plugin 'mileszs/ack.vim'
 " Support for expanding abbreviations for html & css
 Plugin 'mattn/emmet-vim'
 
+" A simple, easy-to-use Vim alignment plugin
+Plugin 'junegunn/vim-easy-align'
+
 " Color theme
 Plugin 'ts-26a/vim-darkspace'
 
@@ -290,12 +293,11 @@ let g:ale_linters = {
 \ 'bash': ['shellcheck']
 \}
 
-set mouse=a             " mouse functionality enabled
-" set cursorline          " highlight current line
+" set cursorline    " highlight current line
+set mouse=a         " mouse functionality enabled
+set ttymouse=xterm2 " mouse support in vim (for iTerm)
+set showmatch       " highlight matching [{()}]
 set foldmethod=syntax
-set ttymouse=xterm2     " mouse support in vim (for iTerm)
-
-set showmatch           " highlight matching [{()}]
 
 syntax enable
 
@@ -392,3 +394,10 @@ hi StatusLine guibg=DarkGreen guifg=White
 hi StatusLineNC guibg=White guifg=Black
 
 set guifont=DejaVu\ Sans\ Mono\ 9
+au BufNewFile,BufRead Jenkinsfile* setf groovy
+
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
