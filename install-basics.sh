@@ -15,6 +15,7 @@ apt install --no-install-recommends -y \
   gnupg2 \
   subversion \
   rename \
+  pulseaudio \
   ffmpeg \
   tree \
   tig \
