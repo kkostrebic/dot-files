@@ -52,10 +52,9 @@ xterm*eightBitInput: false
 ! ----------------------------------------
 
 Xterm*selectToClipboard: true
-XTerm*VT100*translations: #override \
-    Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
-    Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
 
 XTerm*VT100*translations: #override \
     Shift Ctrl <Key> Down: smaller-vt-font() \n\
-    Shift Ctrl <Key> Up: larger-vt-font()
+    Shift Ctrl <Key> Up: larger-vt-font() \n\
+    Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
+    Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
