@@ -180,8 +180,10 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
-# TODO: Find some appropriate shortcut for keyboard layout change
-# bindsym Mod1+Shift exec pkill -SIGRTMIN+13 i3blocks
+# Alt+Shift (Windows shortcut) won't work since both keys are modifier keys
+# Alt+Space (Linux shortcut) won't work since I already assigned this shortcut for toggling focus
+# Using anykind of alphabetic chars won't work since cyrilic version will break it
+bindsym Mod1+Shift+Tab exec pkill -SIGRTMIN+13 i3blocks
 
 # Use xprop command to get proper wm class
 # Make volume control float window
