@@ -395,6 +395,9 @@ hi StatusLineNC guibg=White guifg=Black
 
 set guifont=DejaVu\ Sans\ Mono\ 9
 au BufNewFile,BufRead Jenkinsfile* setf groovy
+au BufNewFile,BufRead *.service setf systemd
+au BufNewFile,BufRead *.unit setf systemd
+au BufNewFile,BufRead *.timer setf systemd
 
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
