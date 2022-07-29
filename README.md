@@ -16,6 +16,27 @@ You can replace the -eq comparison with one like -le 3 (for vt1 to vt3) if you w
 
 Alternative conditions to detect the virtual terminal include `"$(tty)" = "/dev/tty1"`, which does not allow comparison with -le, and `"$(fgconsole 2>/dev/null || echo -1)" -eq 1`, which does not work in serial consoles. 
 
+### What is starting i3-wm
+
+TL;DR 
+startx will start i3-wm even if there is no .xinitrc configured, because it's 
+configured as default window manager (in case no other window managers are installed). 
+
+[Original stackoverflow link/answer](https://unix.stackexchange.com/questions/315223/what-is-starting-i3-when-i-run-startx)
+
+i3 seems to be a X Window Manager. If it's your system's default window manager, 
+it's registered with the 'alternatives' system - which you can check with ```update-alternatives --display x-window-manager```. 
+
+This means that ```/usr/bin/x-window-manager``` is a symlink to ```/etc/alternatives/x-window-manager```; 
+this in turn is set by the 'alternatives' system to point to i3.
+
+If you want to change the system default window manager, root can ```update-alternatives --config x-window-manager```.
+
+If Xsession finds a window manager, it will make this the default program to start in the session. 
+In Debian, this is done in ```/etc/X11/Xsession.d/50x11-common_determine-startup```.
+
+If a users want to run a different program in their X session, then they can write a ~/.xsession that starts (or execs) the desired program.
+
 ### Unicode characters in VIM
 1. go into INSERT mode.
 1. Ctrl+v go into ins-special-keys mode.
