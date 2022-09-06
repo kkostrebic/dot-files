@@ -255,6 +255,9 @@ Plugin 'majutsushi/tagbar'
 " A Vim plugin that manages your tag files (using ctags)
 Plugin 'ludovicchabant/vim-gutentags.git'
 
+" Personal Wiki for Vim 
+Plugin 'vimwiki/vimwiki.git'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -404,3 +407,12 @@ vmap <Enter> <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Vimwiki 
+let g:vimwiki_list = [{'path': '~/projects/wiki/',
+                     \ 'syntax': 'markdown', 'ext': '.md',
+                     \ 'links_space_char': '-',
+                     \ 'index': 'index',
+                     \ }]
+
+" /Vimwiki
