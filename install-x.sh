@@ -22,7 +22,8 @@ apt install --no-install-recommends -y \
   libnotify-bin \
   blueman \
   pavucontrol \
-  slop
+  slop \
+  arandr
 
 # xserver-xorg - x.org X server
 # xinit - X server initialisation tool (xinit, startx)
@@ -44,4 +45,6 @@ apt install --no-install-recommends -y \
 # blueman - graphical (GTK+) bluetooth manager
 # pavucontrol - PulseAudio volume controle (simple GTK+ based volume control tool)
 # slop - application that queries for a selection from the user and prints the region to stdout
-
+# arandr - ARandR is a visual front end for XRandR, which provides full control
+#          over the relative positioning and rotation of monitors, as well as
+#          saving and loading to/from shell scripts
