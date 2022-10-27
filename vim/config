@@ -258,6 +258,9 @@ Plugin 'ludovicchabant/vim-gutentags.git'
 " Personal Wiki for Vim 
 Plugin 'vimwiki/vimwiki.git'
 
+" automatically synchronize Vimwiki notes directory on Vimwiki startup and exit using Git
+Plugin 'michal-h21/vimwiki-sync.git'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -409,10 +412,30 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " Vimwiki 
-let g:vimwiki_list = [{'path': '~/projects/wiki/',
-                     \ 'syntax': 'markdown', 'ext': '.md',
-                     \ 'links_space_char': '-',
-                     \ 'index': 'index',
-                     \ }]
+let wiki_1 = {}
+let wiki_1.name = 'Wiki'
+let wiki_1.path = '~/projects/wiki/'
+let wiki_1.syntax = 'markdown'
+let wiki_1.ext = '.md'
+let wiki_1.links_space_char = '-'
+let wiki_1.index = 'index'
+
+let wiki_2 = {}
+let wiki_2.name = 'Private'
+let wiki_2.path = '~/projects/wiki/private'
+let wiki_2.syntax = 'markdown'
+let wiki_2.ext = '.md'
+let wiki_2.links_space_char = '-'
+let wiki_2.index = 'index'
+
+let wiki_3 = {}
+let wiki_3.name = 'Tasks'
+let wiki_3.path = '~/projects/wiki/tasks'
+let wiki_3.syntax = 'markdown'
+let wiki_3.ext = '.md'
+let wiki_3.links_space_char = '-'
+let wiki_3.index = 'index'
+
+let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
 
 " /Vimwiki
