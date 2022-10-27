@@ -24,21 +24,21 @@ apt install --no-install-recommends -y \
   pavucontrol \
   slop
 
+# xserver-xorg - x.org X server
+# xinit - X server initialisation tool (xinit, startx)
+# x11-xserver-utils - X server utilities
+# xterm - X terminal emulator
+# xdotool - fake keyboard/mouse input, window management, etc.
+# xfonts-base - standard fonts for X
+# fonts-dejavu-core - Vera font family derivate with additional characters
+# fonts-font-awesome - iconic font (~249 various icon glyphs)
 # i3-wm - dynamic tiling window manager
 # i3status - status line for i3bar
 # i3lock - screen locker
-# xdotool - fake keyboard/mouse input, window management, etc.
-# xinit - X server initialisation tool (xinit, startx)
-# xterm - X terminal emulator
-# xserver-xorg - x.org X server
-# x11-xserver-utils - X server utilities
 # gsimplecal - lightweight (GTK+) GUI calendar application
 # dunst - configurable and lightweight notification-daemon (colored box with unformatted text)
 # rofi - application laucher, window switcher, ssh launcher
 # maim - takes screenshots of your desktop
-# xfonts-base - standard fonts for X
-# fonts-dejavu-core - Vera font family derivate with additional characters
-# fonts-font-awesome - iconic font (~249 various icon glyphs)
 # notify-osd - daemon that displays passive pop-up notifications
 # libnotify-bin - library that sends desktop notifications to a notification daemon
 # blueman - graphical (GTK+) bluetooth manager
