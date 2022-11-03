@@ -117,3 +117,44 @@ Categories=Application;Network;WebBrowser;
 MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;
 StartupNotify=True
 ```
+
+### Applications
+
+#### Graphical 
+
+[Geeqie](https://github.com/BestImageViewer/geeqie#downloading) 
+
+Install/build from source (there are scripts making process easy and painless)
+
+image viewer using GTK+ is a browser for graphics files offering single click
+viewing of your graphics files. It includes thumbnail view, zoom, filtering
+features and external editor support.                              
+
+
+[Darktable](https://www.darktable.org/install/)
+
+Install using binary package (dpkg).
+
+virtual lighttable and darkroom for photographers Darktable manages your
+digital negatives in a database and lets you view them  through a zoomable
+lighttable. it also enables you to develop raw images and enhance them.
+
+
+[GIMP](https://www.gimp.org/downloads/)
+
+Install using distribution official package, e.g. `# apt install gimp`
+
+GNU Image Manipulation Program is an advanced picture editor. You can use it to
+edit, enhance, and retouch photos and scans, create drawings, and make your own
+images.
+
+
+[Inkscape](https://inkscape.org/release/)
+
+Install using AppImage.
+
+vector-based drawing program. Inkscape is an illustration editor which has
+everything needed to create professional-quality computer art. You can use it
+to make diagrams and illustrations, technical drawings, web graphics, clip art,
+icons and logos. A collection of hands-on tutorials show you how to combine
+lines, shapes and text of different types and styles to build up a picture.
