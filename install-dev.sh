@@ -37,3 +37,14 @@ sudo apt install --no-install-recommends -y \
   vim-gtk3 \
   universal-ctags \
   wkhtmltopdf
+
+# Virtualization
+# qemu-system - QEMU full system emulation binaries
+# libvirt-daemon-system - Libvirt is a C toolkit to interact with the virtualization capabilities
+# virt-manager - The virt-manager application is a desktop user interface for managing virtual machines through libvirt.
+
+apt install -y \
+  qemu-system \
+  libvirt-daemon-system \
+  virt-manager
+
