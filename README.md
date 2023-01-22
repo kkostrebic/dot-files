@@ -124,7 +124,7 @@ StartupNotify=True
 
 [Geeqie](https://github.com/BestImageViewer/geeqie#downloading) 
 
-Install/build from source (there are scripts making process easy and painless)
+Install using distribution official package, e.g. `# apt install geeqie`
 
 image viewer using GTK+ is a browser for graphics files offering single click
 viewing of your graphics files. It includes thumbnail view, zoom, filtering

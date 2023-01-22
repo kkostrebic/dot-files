@@ -133,3 +133,38 @@ precmd() {
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
+
+setopt ksh_glob
+
+# Generate random base4 string with length provided as parameter
+# - pass /dev/urandom to base64 command
+# - take first n (provided by param) chars
+function random-base64() {
+  base64 < /dev/urandom | head -c $1
+}
+
+# Copy to clipboard function
+# - check (with hash command) if xclip command exists (with error output to
+#   /dev/null)
+function copy-to-clipboard() {
+  if hash xclip 2>/dev/null; then
+    xclip -selection c
+  fi
+}
+
+# View images with feh using standard args
+function feh() {
+  command -p feh \
+    --auto-rotate \
+    --scale-down \
+    --full-screen \
+    --draw-exif \
+    --draw-filename \
+    --draw-tinted \
+    --auto-zoom \
+    --conversion-timeout=1 \
+    --recursive "$@"
+}
+alias show-jpgs='feh *.[jJ][pP]?([eE])[gG]'
+alias show-raws='feh *.[nN][eE][fF]'
+alias remove-exif='exiftool -all= *.jpg'

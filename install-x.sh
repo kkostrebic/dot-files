@@ -23,7 +23,8 @@ apt install --no-install-recommends -y \
   blueman \
   pavucontrol \
   slop \
-  arandr
+  arandr \
+  xclip
 
 # xserver-xorg - x.org X server
 # xinit - X server initialisation tool (xinit, startx)
@@ -48,3 +49,6 @@ apt install --no-install-recommends -y \
 # arandr - ARandR is a visual front end for XRandR, which provides full control
 #          over the relative positioning and rotation of monitors, as well as
 #          saving and loading to/from shell scripts
+# xclip - provides an interface to X selections ("the clipboard") from the
+#         command line. It can read data from standard in or a file and place
+#         it in an X selection for pasting into other X applications.

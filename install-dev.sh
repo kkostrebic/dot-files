@@ -24,6 +24,7 @@ sudo apt install --no-install-recommends -y \
 # Small tools/apps/utils
 
 # feh - fast, lightweight image viewer
+# dcraw - decode raw digital camera images
 # mupdf - micro pdf viewer
 # thunar - file manager (xfce)
 # vim-gtk3 - vim with gtk3 gui
@@ -32,6 +33,7 @@ sudo apt install --no-install-recommends -y \
 
 sudo apt install --no-install-recommends -y \
   feh \
+  dcraw \
   mupdf \
   thunar \
   vim-gtk3 \
