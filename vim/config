@@ -284,6 +284,12 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 
+" Delete the buffer but keep the split (take the previous opened buffer)
+nmap <Leader>d :b#<bar>bd#<CR>
+
+nmap <Leader>b :CtrlPBuffer<CR>
+nmap <Leader><Space> :nohl<CR>
+
 nmap <F8> :TagbarToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
 
@@ -370,23 +376,30 @@ execute WatchForChanges("*",autoreadargs)
 " ============================== 
 
 " Advanced
-set confirm       " Prompt confirmation dialogs
-set ruler         " Show row and column ruler information
+set confirm                    " Prompt confirmation dialogs
+set ruler                      " Show row and column ruler information
 
-set backspace=indent,eol,start    " Backspace behaviour
+set backspace=indent,eol,start " Backspace behaviour
 
-set laststatus=2    " show status bar all the time
-set nowrap          " do not wrap long lines"
+set laststatus=2               " show status bar all the time
+set nowrap                     " do not wrap long lines"
 
 let NERDTreeShowHidden=1    " show hidden files in NERDTree
 
 highlight Pmenu ctermfg=0 ctermbg=15
 highlight PmenuSel ctermfg=0 ctermbg=7
 
+
+" Ack settings
+"===============================================================================
+nnoremap <Leader>f :Ack!<Space>
+
 " Use ripgrep (in case it's there) for text search 
 if executable('rg')
   let g:ackprg = 'rg --vimgrep'
 endif
+"===============================================================================
+
 
 " Status line definition
 "===============================================================================
@@ -409,10 +422,12 @@ let g:buftabline_numbers = 1 " show buffer numbers in tab line
 set tags+=tags;$HOME
 
 " GVim settings
+"===============================================================================
 set guioptions-=m "remove menu bar
 set guioptions-=T "remove toolbar
 set guioptions-=r "remove right-hand scroll bar 
 set guioptions-=L "remove left-hand scroll bar 
+"===============================================================================
 
 " let g:AutoPairsFlyMode = 1
 
