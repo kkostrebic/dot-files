@@ -230,7 +230,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'junegunn/vim-easy-align'
 
 " Color theme
-Plugin 'ts-26a/vim-darkspace'
+" Plugin 'ts-26a/vim-darkspace'
+Plugin 'NLKNguyen/papercolor-theme'
 
 " Tagbar is a Vim plugin that provides an easy way to browse the tags of the
 " current file and get an overview of its structure.
@@ -324,47 +325,43 @@ let g:ale_linters = {
 \ 'bash': ['shellcheck']
 \}
 
-" set cursorline    " highlight current line
-set mouse=a         " mouse functionality enabled
-set ttymouse=xterm2 " mouse support in vim (for iTerm)
-set showmatch       " highlight matching [{()}]
+" set cursorline                  " highlight current line
+set mouse=a                       " mouse functionality enabled
+set ttymouse=xterm2               " mouse support in vim (for iTerm)
+set showmatch                     " highlight matching [{()}]
 set foldmethod=syntax
 
 syntax enable
 
 " General
-set number        " Show line numbers
-set showmatch     " Highlight matching brace
-set visualbell    " Use visual bell (no beeping)
+set number                        " Show line numbers
+set showmatch                     " Highlight matching brace
+set visualbell                    " Use visual bell (no beeping)
 
-set hlsearch      " Highlight all search results
-set smartcase     " Enable smart-case search
-set ignorecase    " Always case-insensitive
-set incsearch     " Searches for strings incrementally
+set hlsearch                      " Highlight all search results
+set smartcase                     " Enable smart-case search
+set ignorecase                    " Always case-insensitive
+set incsearch                     " Searches for strings incrementally
 
-set autoindent    " Auto-indent new lines
-set expandtab     " Use spaces instead of tabs
-set shiftwidth=2  " Number of auto-indent spaces
-set smartindent   " Enable smart-indent
-set smarttab      " Enable smart-tabs
-set softtabstop=2 " Number of spaces per Tab
+set autoindent                    " Auto-indent new lines
+set expandtab                     " Use spaces instead of tabs
+set shiftwidth=2                  " Number of auto-indent spaces
+set smartindent                   " Enable smart-indent
+set smarttab                      " Enable smart-tabs
+set softtabstop=2                 " Number of spaces per Tab
 set tabstop=2   
-set directory=$HOME/.vim/swp//      " Place where vim will keep its swap files
+set directory=$HOME/.vim/swp//    " Place where vim will keep its swap files
 
-set clipboard=unnamed,unnamedplus   " use the system clipboard
+set clipboard=unnamed,unnamedplus " use the system clipboard
 
 " background to dark to keep same color schema when using vim in tmux
 set t_Co=256    " make sure that terminal has 256 colors enabled
 set background=dark
 set termguicolors
 
-colorscheme darkspace   " set colorscheme
+colorscheme PaperColor   " set colorscheme
 
-highlight ColorColumn guibg=#0A0A0A
 set colorcolumn=80
-
-" override gui background color from colorscheme (set it to black)
-hi Normal guibg=#000000
 
 " ============================== 
 " === autoread functionality ===
@@ -386,7 +383,10 @@ set nowrap                     " do not wrap long lines"
 
 let NERDTreeShowHidden=1    " show hidden files in NERDTree
 
-highlight Pmenu ctermfg=0 ctermbg=15
+" override gui background color from colorscheme (set it to black)
+highlight Normal   ctermbg=0 guibg=#000000 " set it to black
+
+highlight Pmenu    ctermfg=0 ctermbg=15
 highlight PmenuSel ctermfg=0 ctermbg=7
 
 
@@ -396,7 +396,7 @@ nnoremap <Leader>f :Ack!<Space>
 
 " Use ripgrep (in case it's there) for text search 
 if executable('rg')
-  let g:ackprg = 'rg --vimgrep'
+  let g:ackprg = 'rg --smart-case --sort path --vimgrep'
 endif
 "===============================================================================
 
@@ -431,21 +431,21 @@ set guioptions-=L "remove left-hand scroll bar
 
 " let g:AutoPairsFlyMode = 1
 
-hi TabLineSel guibg=DarkGreen guifg=White
-hi TabLine guibg=Black guifg=Gray
-hi StatusLine guibg=DarkGreen guifg=White
-hi StatusLineNC guibg=White guifg=Black
+hi TabLineSel   guibg=DarkGreen guifg=White
+hi TabLine      guibg=Black     guifg=Gray
+hi StatusLine   guibg=DarkGreen guifg=White
+hi StatusLineNC guibg=White     guifg=Black
 
 set guifont=DejaVu\ Sans\ Mono\ 9
 au BufNewFile,BufRead Jenkinsfile* setf groovy
-au BufNewFile,BufRead *.service setf systemd
-au BufNewFile,BufRead *.unit setf systemd
-au BufNewFile,BufRead *.timer setf systemd
+au BufNewFile,BufRead *.service    setf systemd
+au BufNewFile,BufRead *.unit       setf systemd
+au BufNewFile,BufRead *.timer      setf systemd
 
 
 " Visual-Multi
 "===============================================================================
-let g:VM_maps = {}
+let g:VM_maps                       = {}
 let g:VM_maps['Find Under']         = '<C-A-n>'           " replace C-n
 let g:VM_maps['Find Subword Under'] = '<C-A-n>'           " replace visual C-n
 "===============================================================================
@@ -462,31 +462,31 @@ nmap ga <Plug>(EasyAlign)
 
 " Vimwiki 
 "===============================================================================
-let wiki_1 = {}
-let wiki_1.name = 'Wiki'
-let wiki_1.path = '~/projects/wiki/'
-let wiki_1.syntax = 'markdown'
-let wiki_1.ext = '.md'
+let wiki_1                  = {}
+let wiki_1.name             = 'Wiki'
+let wiki_1.path             = '~/projects/wiki/'
+let wiki_1.syntax           = 'markdown'
+let wiki_1.ext              = '.md'
 let wiki_1.links_space_char = '-'
-let wiki_1.index = 'index'
+let wiki_1.index            = 'index'
 
-let wiki_2 = {}
-let wiki_2.name = 'Private'
-let wiki_2.path = '~/projects/wiki/private'
-let wiki_2.syntax = 'markdown'
-let wiki_2.ext = '.md'
+let wiki_2                  = {}
+let wiki_2.name             = 'Private'
+let wiki_2.path             = '~/projects/wiki/private'
+let wiki_2.syntax           = 'markdown'
+let wiki_2.ext              = '.md'
 let wiki_2.links_space_char = '-'
-let wiki_2.index = 'index'
+let wiki_2.index            = 'index'
 
-let wiki_3 = {}
-let wiki_3.name = 'Tasks'
-let wiki_3.path = '~/projects/wiki/tasks'
-let wiki_3.syntax = 'markdown'
-let wiki_3.ext = '.md'
+let wiki_3                  = {}
+let wiki_3.name             = 'Tasks'
+let wiki_3.path             = '~/projects/wiki/tasks'
+let wiki_3.syntax           = 'markdown'
+let wiki_3.ext              = '.md'
 let wiki_3.links_space_char = '-'
-let wiki_3.index = 'index'
+let wiki_3.index            = 'index'
 
-let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
+let g:vimwiki_list          = [wiki_1, wiki_2, wiki_3]
 "===============================================================================
 
 " Gutentags
