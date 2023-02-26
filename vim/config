@@ -3,9 +3,8 @@ filetype off                  " required
 let g:mapleader=','
 
 
-" ============================== 
-" === autoread functionality ===
-" ============================== 
+" Autoread functionality (automatically reload opened files on detected changes)
+"===============================================================================
 
 " If you are using a console version of Vim, or dealing
 " with a file that changes externally (e.g. a web server log)
@@ -170,9 +169,13 @@ function! WatchForChanges(bufname, ...)
   let @"=reg_saved
 endfunction
 
-" ============================== 
-" = end autoread functionality =
-" ============================== 
+
+let autoreadargs={'autoread':1} 
+execute WatchForChanges("*",autoreadargs) 
+
+" end Autoread functionality
+"===============================================================================
+
 
 set number relativenumber
 
@@ -186,6 +189,10 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
 augroup END
+
+
+" Vundle (plugin manager)
+"===============================================================================
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -230,7 +237,6 @@ Plugin 'mattn/emmet-vim'
 Plugin 'junegunn/vim-easy-align'
 
 " Color theme
-" Plugin 'ts-26a/vim-darkspace'
 Plugin 'NLKNguyen/papercolor-theme'
 
 " Tagbar is a Vim plugin that provides an easy way to browse the tags of the
@@ -256,43 +262,48 @@ Plugin 'mg979/vim-visual-multi'
 Plugin 'prabirshrestha/vim-lsp'
 Plugin 'mattn/vim-lsp-settings'
 
-" Not using any more but here for a reference (just in case)
-"===============================================================================
 " Plugin 'tpope/vim-bundler'
 
-" This plugin is used for displaying thin vertical lines at each indentation
-" level for code indented with spaces
-" Plugin 'Yggdroot/indentLine'
+" **All of your Plugins must be added before the following line**
 
-" Enhanced javascript syntax file for Vim
-" Plugin 'jelera/vim-javascript-syntax'
-
-" c++ syntax highlighting
-" Plugin 'octol/vim-cpp-enhanced-highlight'
-
-" Elegant buffer explorer
-" Plugin 'ap/vim-buftabline'
-
-" Provide easy code formatting
-" Plugin 'Chiel92/vim-autoformat'
-
-" Golang support
-" Plugin 'fatih/vim-go'
-"===============================================================================
-
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+"===============================================================================
 
 
+" Shortcuts
+"===============================================================================
 " Delete the buffer but keep the split (take the previous opened buffer)
 nmap <Leader>d :b#<bar>bd#<CR>
 
+" List all open buffers
 nmap <Leader>b :CtrlPBuffer<CR>
+
+" Remove matched highlights
 nmap <Leader><Space> :nohl<CR>
 
+" Show list of tags for the current open file
 nmap <F8> :TagbarToggle<CR>
+"
+" Open/Close file explorer
 map <C-n> :NERDTreeToggle<CR>
+
+" Fix issues within current buffer, e.g. trim white spaces
+noremap <F3> :ALEFix<CR>
+
+" Search in files
+nnoremap <Leader>f :Ack!<Space>
+
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <S-CR> <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+"===============================================================================
+
+
+" ALE
+"===============================================================================
 
 " dependencies:
 " rubocop (rvm @global do gem install rubocop)
@@ -300,30 +311,35 @@ map <C-n> :NERDTreeToggle<CR>
 " tidy (apt install tidy)
 " shfmt (go get -u mvdan.cc/sh/cmd/shfmt)
 
-" ale settings
+" All shortcuts are defined in same place (this commented one is just for the
+" reference for this plugin)
+" noremap <F3> :ALEFix<CR>
+
 let g:ale_set_balloons = 0
 let g:ale_completion_enabled = 0
 
-noremap <F3> :ALEFix<CR>
+
 let g:ale_fixers = {
-\ '*': ["trim_whitespace"],
+\ '*':    ["trim_whitespace"],
 \ 'html': ['tidy'],
-\ 'xml': ['xmllint'],
-\ 'css': ['prettier'],
+\ 'xml':  ['xmllint'],
+\ 'css':  ['prettier'],
 \ 'scss': ['prettier'],
 \ 'less': ['prettier'],
 \}
 let g:ale_linters = {
-\ 'html': ['tidy','prettier'],
-\ 'xml': ['xmllint'],
+\ 'html':       ['tidy','prettier'],
+\ 'xml':        ['xmllint'],
 \ 'javascript': ['prettier'],
-\ 'json': ['prettier'], 
-\ 'less': ['prettier'],
-\ 'scss': ['prettier'],
-\ 'ruby': ['rubocop'],
-\ 'yaml': ['prettier'],
-\ 'bash': ['shellcheck']
+\ 'json':       ['prettier'],
+\ 'less':       ['prettier'],
+\ 'scss':       ['prettier'],
+\ 'ruby':       ['rubocop'],
+\ 'yaml':       ['prettier'],
+\ 'bash':       ['shellcheck']
 \}
+"===============================================================================
+
 
 " set cursorline                  " highlight current line
 set mouse=a                       " mouse functionality enabled
@@ -363,15 +379,6 @@ colorscheme PaperColor   " set colorscheme
 
 set colorcolumn=80
 
-" ============================== 
-" === autoread functionality ===
-" ============================== 
-let autoreadargs={'autoread':1} 
-execute WatchForChanges("*",autoreadargs) 
-" ============================== 
-" = end autoread functionality =
-" ============================== 
-
 " Advanced
 set confirm                    " Prompt confirmation dialogs
 set ruler                      " Show row and column ruler information
@@ -392,7 +399,10 @@ highlight PmenuSel ctermfg=0 ctermbg=7
 
 " Ack settings
 "===============================================================================
-nnoremap <Leader>f :Ack!<Space>
+
+" All shortcuts are defined in same place (this commented one is just for the
+" reference for this plugin)
+" nnoremap <Leader>f :Ack!<Space>
 
 " Use ripgrep (in case it's there) for text search 
 if executable('rg')
@@ -451,15 +461,6 @@ let g:VM_maps['Find Subword Under'] = '<C-A-n>'           " replace visual C-n
 "===============================================================================
 
 
-" EasyAlign
-"===============================================================================
-" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-vmap <S-CR> <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-"===============================================================================
-
 " Vimwiki 
 "===============================================================================
 let wiki_1                  = {}
@@ -489,5 +490,8 @@ let wiki_3.index            = 'index'
 let g:vimwiki_list          = [wiki_1, wiki_2, wiki_3]
 "===============================================================================
 
+
 " Gutentags
+"===============================================================================
 let g:gutentags_project_root = ['.git']
+"===============================================================================
