@@ -136,6 +136,54 @@ fi
 
 setopt ksh_glob
 
+# ==============================================================================
+# Authomatically check for updates of dot-files
+# ==============================================================================
+function dot-files-update-available() {
+  # use first param as a directory where dot-files are
+  local directory=$1
+  # get local branch's SHA
+  local local_head=$(git -C $directory rev-parse HEAD)
+  # get remote branch's SHA
+  local remote_head=$(git -C $directory ls-remote https://github.com/kkostrebic/dot-files.git master | cut -f1)
+
+  #compare SHAs
+  if [ "$local_head" != "$remote_head" ]; then
+    echo "true";
+  else
+    echo "false";
+  fi
+}
+
+function dot-files-update() {
+  # get real path (where file is linked) to get the directory of dot-files and
+  # just use .zshrc for this purpose (since zsh does not have BASH_SOURCE like
+  # bash)
+  local directory=$(dirname $(realpath $HOME/.zshrc))
+  local changes_detected=$(dot-files-update-available $directory)
+
+  if [ "$changes_detected" = "true" ]; then
+    echo -n "[dot-files] Would you like to update? [Y/n]: "
+    # read only 1 char and store to option variable
+    read -r -k 1 option
+
+    if [[ $option =~ [yY$'\n'] ]]; then
+      echo "\n[dot-files] Updating...\n"
+
+      # get the latest changes without entering the directory
+      git -C $directory pull
+
+      echo "\n[dot-files] Updated to latest."
+    else
+      echo "\n[dot-files] Skipping update."
+    fi
+  fi
+}
+
+dot-files-update
+# ==============================================================================
+
+
 # Generate random base4 string with length provided as parameter
 # - pass /dev/urandom to base64 command
 # - take first n (provided by param) chars
