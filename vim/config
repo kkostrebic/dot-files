@@ -2,7 +2,6 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 let g:mapleader=','
 
-
 " Autoread functionality (automatically reload opened files on detected changes)
 "===============================================================================
 
