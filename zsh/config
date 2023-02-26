@@ -145,7 +145,7 @@ function dot-files-update-available() {
   # get local branch's SHA
   local local_head=$(git -C $directory rev-parse HEAD)
   # get remote branch's SHA
-  local remote_head=$(git -C $directory ls-remote https://github.com/kkostrebic/dot-files.git master | cut -f1)
+  local remote_head=$(git ls-remote https://github.com/kkostrebic/dot-files.git master | cut -f1)
 
   #compare SHAs
   if [ "$local_head" != "$remote_head" ]; then
