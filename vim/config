@@ -270,8 +270,8 @@ set guioptions-=L "remove left-hand scroll bar
 
 hi TabLineSel   guibg=DarkGreen guifg=White
 hi TabLine      guibg=Black     guifg=Gray
-hi StatusLine   guibg=Black     guifg=Green
-hi StatusLineNC guibg=DarkRed   guifg=DarkGray
+hi StatusLine   ctermbg=0 ctermfg=10 guibg=Black     guifg=Green
+hi StatusLineNC ctermbg=4 ctermfg=8 guibg=DarkRed   guifg=DarkGray
 
 set guifont=DejaVu\ Sans\ Mono\ 9
 au BufNewFile,BufRead Jenkinsfile* setf groovy
