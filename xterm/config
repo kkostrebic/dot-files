@@ -2,7 +2,13 @@
 ! xrdb ~/.Xresources
 ! xrdb -merge ~/.Xresources
 !
-! ----------------------------------------
+
+
+
+/* ------------------------------------------------------------------------- */
+/* xterm */
+/* ------------------------------------------------------------------------- */
+
 ! Color pallete from (theme one):
 ! http://web.archive.org/web/20090130061234/http://phraktured.net/terminal-colors/
 *background: rgb:00/00/00
@@ -23,7 +29,6 @@
 *color13:    rgb:f8/54/f8
 *color14:    rgb:50/fc/f8
 *color15:    rgb:f8/fc/f8
-! ----------------------------------------
 
 ! ----------------------------------------
 ! This section is originally from:
@@ -58,3 +63,78 @@ XTerm*VT100*translations: #override \
     Shift Ctrl <Key> Up: larger-vt-font() \n\
     Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
     Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
+
+/* ------------------------------------------------------------------------- */
+/* End of xterm */
+/* ------------------------------------------------------------------------- */
+
+
+/* ------------------------------------------------------------------------- */
+/* rxvt-unicode */
+/* ------------------------------------------------------------------------- */
+
+URxvt.colorPalette: linux
+URxvt*background: rgb:00/00/00
+URxvt*foreground: rgb:a8/a8/a8
+URxvt*color0:     rgb:00/00/00
+URxvt*color1:     rgb:a8/00/00
+URxvt*color2:     rgb:00/a8/00
+URxvt*color3:     rgb:a8/54/00
+URxvt*color4:     rgb:00/00/a8
+URxvt*color5:     rgb:a8/00/a8
+URxvt*color6:     rgb:00/a8/a8
+URxvt*color7:     rgb:a8/a8/a8
+URxvt*color8:     rgb:54/50/54
+URxvt*color9:     rgb:f8/54/50
+URxvt*color10:    rgb:50/fc/50
+URxvt*color11:    rgb:f8/fc/50
+URxvt*color12:    rgb:50/54/f8
+URxvt*color13:    rgb:f8/54/f8
+URxvt*color14:    rgb:50/fc/f8
+URxvt*color15:    rgb:f8/fc/f8
+
+/* Set font and font size */
+URxvt*font: xft:DejaVu Sans Mono:style=Book:size=9
+/* Default space between letters in urxvt is too wide, lower the default value
+ * for 1px */
+URxvt*letterSpace: -1
+/* Number of lines kept in terminal history */
+URxvt*saveLines: 16384
+/* Loads profile files, like ~/.profile, etc.
+ * if set to false, it would load only *rc files, i.e. ~/,zshrc */
+URxvt*loginShell: true
+/* Specifies the name of the terminal type to be set in the TERM environment
+ * variable */
+URxvt*termName: rxvt-unicode
+! Hide scroll bar
+URxvt*scrollBar: false
+/* Open file or URL in the user's preferred application */
+URxvt*url-launcher: /usr/bin/xdg-open
+! Execute launcher in combination of ctrl + left mouse button
+URxvt*matcher.button: Ctrl-1
+
+/* Enable some perl extensions, man urxvt-* */
+/* font-size - used to control font size dynamically using keyboard shortcuts */
+/* matcher - used for matching text in in terminal, e.g. detecting, styling and
+ * opening urls in browser */
+/* selection-popup - binds a popup menu to Ctrl-Button3 that lets you paste
+ * the X selections and either modify or use the internal selection text in
+ * various ways (such as uri unescaping, perl evaluation, web-browser starting
+ * etc.), depending on content*/
+URxvt*perl-ext-common: default,matcher,selection-popup,font-size
+
+
+/* Key bindings */
+
+/* Use ctrl+f to search */
+URxvt*keysym.Control-f: searchable-scrollback:start
+
+/* Use ctrl+shift+up to increase the font size in terminal */
+URxvt*keysym.Shift-Control-Up: font-size:increase
+
+/* Use ctrl+shift+down to decrease the font size in terminal */
+URxvt*keysym.Shift-Control-Down: font-size:decrease
+
+/* ------------------------------------------------------------------------- */
+/* End of rxvt-unicode */
+/* ------------------------------------------------------------------------- */
