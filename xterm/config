@@ -103,7 +103,7 @@ URxvt*saveLines: 16384
 URxvt*loginShell: true
 /* Specifies the name of the terminal type to be set in the TERM environment
  * variable */
-URxvt*termName: rxvt-unicode
+URxvt*termName: rxvt-unicode-256color
 ! Hide scroll bar
 URxvt*scrollBar: false
 /* Open file or URL in the user's preferred application */
