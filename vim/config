@@ -200,7 +200,6 @@ set clipboard=unnamed,unnamedplus " use the system clipboard
 " background to dark to keep same color schema when using vim in tmux
 set t_Co=256    " make sure that terminal has 256 colors enabled
 set background=dark
-set termguicolors
 
 colorscheme PaperColor   " set colorscheme
 

@@ -3,73 +3,73 @@
 apt update
 
 apt install --no-install-recommends -y \
-  dialog \
-  build-essential \
+  acpi \
+  apache2-utils \
   autoconf \
+  build-essential \
+  cifs-utils \
+  cups \
+  curl \
   dh-autoreconf \
+  dialog \
+  ffmpeg \
+  gnupg2 \
+  gphotofs \
+  htop \
+  imagemagick \
+  libimage-exiftool-perl \
+  libmagickwand-dev \
+  mc \
+  mdadm \
   module-assistant \
   net-tools \
   network-manager \
-  curl \
-  wget \
-  gnupg2 \
-  subversion \
-  rename \
   pulseaudio \
-  ffmpeg \
-  tree \
-  tig \
-  stow \
-  tmux \
+  rename \
   ripgrep \
-  mc \
-  apache2-utils \
-  imagemagick \
-  libmagickwand-dev \
-  mdadm \
-  smartmontools \
-  samba \
-  cifs-utils \
-  cups \
-  sane \
-  htop \
-  acpi \
   rsync \
+  samba \
+  sane \
+  smartmontools \
+  stow \
+  subversion \
+  tig \
+  tmux \
+  tree \
   unzip \
-  libimage-exiftool-perl \
-  gphotofs
+  wget \
 
-# dialog - displays user-friendly dialog boxes from shell scripts
-# build-essential - Debian package development tools, GNU C++ compiler, GNU C compiler, GNU C development libraries and header files, make (utility for directing compilation)
+# acpi - displays information on ACPI (Advanced Configuration and Power Interface) devices
+# apache2-utils - utility programs for web servers
 # autoconf - automatic configure script builder
+# build-essential - Debian package development tools, GNU C++ compiler, GNU C compiler, GNU C development libraries and header files, make (utility for directing compilation)
+# cifs-utils - utilities for managing mounts of CIFS network file systems
+# cups - Common UNIX Printing System
+# curl - cli tool for transferring data with URL syntax
 # dh-autoreconf - add-on to call autoreconf and clean up after the build
+# dialog - displays user-friendly dialog boxes from shell scripts
+# ffmpeg - tools for transcoding, streaming and playing multimedia files (ffmpeg, ffplay, ffprobe, qt-faststart)
+# gnupg2 - tool to encrypt data to create digital signatures
+# gphotofs - filesystem to mount digital cameras
+# htop - interactive processes viewer
+# imagemagick - image manipulation programs
+# libimage-exiftool-perl - library and program to read and write meta information in multimedia files
+# libmagickwand-dev - image manipulation library
+# mc - midnight commander - tui file manager
+# mdadm - tool to administer linux MD arrays (software RAID)
 # module-assistant - Assistant for building kernel modules (important for VM Guest Additions), bzip2, xz-utils (compression utilities), perl 
 # net-tools - tools for controlling the network subsystem of the linux kernel, arp, ifconfig, netstat, rarp, nameif, route, plipconfig, slattach, mii-tool, iptinnel, ipmaddr
-# curl - cli tool for transferring data with URL syntax
-# wget - utility to retrieve files from the web
-# gnupg2 - tool to encrypt data to create digital signatures
-# subversion - svn, version control system
-# rename - tool (perl extension) for simple renaming multiple files
-# ffmpeg - tools for transcoding, streaming and playing multimedia files (ffmpeg, ffplay, ffprobe, qt-faststart)
-# tree - cli command that displays an indented directory tree
-# tig - text-mode interface for Git
-# stow - tool for managing the installation of multiple software packages in the same run-time directory tree
-# tmux - terminal multiplexer
-# ripgrep - recursively searches directories for a regex pattern
-# mc - midnight commander - tui file manager
-# imagemagick - image manipulation programs
-# libmagickwand-dev - image manipulation library
-# mdadm - tool to administer linux MD arrays (software RAID)
-# smartmontools - control and monitor storage systems using S.M.A.R.T.
-# samba - SMB/CIFS file, print, and login server for Unix
-# cifs-utils - utilities for managing mounts of CIFS network file systems
-# apache2-utils - utility programs for web servers
 # network-manager - network management service that manages network devices and connections (ethernet, WiFi, mobile broadband, PPPoE devices, VPN)
-# cups - Common UNIX Printing System
-# sane - scanner graphical frontends
-# htop - interactive processes viewer
-# acpi - displays information on ACPI (Advanced Configuration and Power Interface) devices
+# rename - tool (perl extension) for simple renaming multiple files
+# ripgrep - recursively searches directories for a regex pattern
 # rsync - fast, versatile, remote (and local) file-copying tool
+# samba - SMB/CIFS file, print, and login server for Unix
+# sane - scanner graphical frontends
+# smartmontools - control and monitor storage systems using S.M.A.R.T.
+# stow - tool for managing the installation of multiple software packages in the same run-time directory tree
+# subversion - svn, version control system
+# tig - text-mode interface for Git
+# tmux - terminal multiplexer
+# tree - cli command that displays an indented directory tree
 # unzip - De-archiver for .zip files
-# libimage-exiftool-perl - library and program to read and write meta information in multimedia files
-# gphotofs - filesystem to mount digital cameras
+# wget - utility to retrieve files from the web
