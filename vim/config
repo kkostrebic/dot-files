@@ -170,7 +170,7 @@ let g:ale_linters = {
 
 " set cursorline                  " highlight current line
 set mouse=a                       " mouse functionality enabled
-set ttymouse=xterm2               " mouse support in vim (for iTerm)
+set ttymouse=urxvt                " mouse support in vim
 set showmatch                     " highlight matching [{()}]
 set foldmethod=syntax
 
