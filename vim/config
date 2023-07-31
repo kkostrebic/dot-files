@@ -17,6 +17,7 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
 augroup END
 
+packadd! matchit
 
 " Vundle (plugin manager)
 "===============================================================================
@@ -31,7 +32,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Directory and file navigation plugin
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
 
 " git plugin
 Plugin 'tpope/vim-fugitive'
@@ -112,8 +113,13 @@ nmap <Leader><Space> :nohl<CR>
 " Show list of tags for the current open file
 nmap <F8> :TagbarToggle<CR>
 "
-" Open/Close file explorer
-map <C-n> :NERDTreeToggle<CR>
+" Open file explorer
+" - in current buffer
+nmap <Leader>e :Explore<CR>
+" - vertical split ( | char )
+nmap <bar> :Vexplore<CR>
+" - horizontal split ( - char )
+nmap - :Sexplore<CR>
 
 " Fix issues within current buffer, e.g. trim white spaces
 noremap <F3> :ALEFix<CR>
@@ -170,7 +176,7 @@ let g:ale_linters = {
 
 " set cursorline                  " highlight current line
 set mouse=a                       " mouse functionality enabled
-set ttymouse=xterm2               " mouse support in vim (for iTerm)
+set ttymouse=urxvt                " mouse support in vim
 set showmatch                     " highlight matching [{()}]
 set foldmethod=syntax
 
