@@ -15,3 +15,10 @@
 --exclude=build
 --exclude=dist
 --exclude=*.bundle.*
+
+--langdef=js
+--langmap=js:.js
+--langmap=js:+.jsx
+
+--langdef=typescript
+--langmap=typescript:.ts

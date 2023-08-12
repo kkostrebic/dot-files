@@ -6,6 +6,16 @@ let g:mapleader=','
 set number relativenumber
 set autoread
 
+" default regexp engine:
+" 	The possible values are:
+" 		0	automatic selection
+" 		1	old engine
+" 		2	NFA engine
+" NOTE: there are issues and vim is becoming painfully slow when opening
+" typescript files if this value is set to 1, so let's use automatic settings
+" which decides what's best engine for different cases
+set regexpengine=0
+
 
 " vim-numbertoggle - Automatic toggling between 'hybrid' and absolute line numbers
 " Maintainer:        <https://jeffkreeftmeijer.com>
@@ -87,8 +97,8 @@ Plugin 'ap/vim-css-color'
 " Multiple cursors plugin for vim/neovim
 Plugin 'mg979/vim-visual-multi'
 
-Plugin 'prabirshrestha/vim-lsp'
-Plugin 'mattn/vim-lsp-settings'
+"Plugin 'prabirshrestha/vim-lsp'
+"Plugin 'mattn/vim-lsp-settings'
 
 " Plugin 'tpope/vim-bundler'
 
@@ -112,14 +122,13 @@ nmap <Leader><Space> :nohl<CR>
 
 " Show list of tags for the current open file
 nmap <F8> :TagbarToggle<CR>
-"
-" Open file explorer
-" - in current buffer
-nmap <Leader>e :Explore<CR>
-" - vertical split ( | char )
+
+" Open/Close file explorer
+" - in vertical split ( | char )
 nmap <bar> :Vexplore<CR>
-" - horizontal split ( - char )
+" - in horizontal split ( - char )
 nmap - :Sexplore<CR>
+nmap <C-N> :Explore<CR>
 
 " Fix issues within current buffer, e.g. trim white spaces
 noremap <F3> :ALEFix<CR>
@@ -133,6 +142,23 @@ vmap <S-CR> <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 "===============================================================================
+
+
+" CtrlP
+"===============================================================================
+
+" do not show/ignore searching files 
+let g:ctrlp_custom_ignore = {
+\  'dir': '\v[\/]node_modules$'
+\}
+
+" maximum number of files to scan
+let g:ctrlp_max_files = 20000
+
+" maximum depth of a directory tree to recurse into
+let g:ctrlp_max_depth = 40
+"===============================================================================
+
 
 
 " ALE
