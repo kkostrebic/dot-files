@@ -118,7 +118,7 @@ nmap <Leader>d :b#<bar>bd#<CR>
 nmap <Leader>b :CtrlPBuffer<CR>
 
 " Remove matched highlights
-nmap <Leader><Space> :nohl<CR>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 " Show list of tags for the current open file
 nmap <F8> :TagbarToggle<CR>
