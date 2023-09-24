@@ -97,6 +97,10 @@ Plugin 'ap/vim-css-color'
 " Multiple cursors plugin for vim/neovim
 Plugin 'mg979/vim-visual-multi'
 
+" allows you to select some text using Vim's visual mode and then hit * and #
+" to search for it elsewhere in the file
+Plugin 'nelstrom/vim-visual-star-search'
+
 "Plugin 'prabirshrestha/vim-lsp'
 "Plugin 'mattn/vim-lsp-settings'
 
