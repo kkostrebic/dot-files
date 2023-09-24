@@ -36,6 +36,7 @@ apt install --no-install-recommends -y \
   tig \
   tmux \
   tree \
+  udisks2 \
   unzip \
   wget \
 
@@ -71,5 +72,6 @@ apt install --no-install-recommends -y \
 # tig - text-mode interface for Git
 # tmux - terminal multiplexer
 # tree - cli command that displays an indented directory tree
+# udisks2 - handles operations such as querying, mounting, unmounting, formatting, or detaching storage devices such as hard disks or USB thumb drives
 # unzip - De-archiver for .zip files
 # wget - utility to retrieve files from the web
