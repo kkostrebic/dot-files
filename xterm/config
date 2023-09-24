@@ -70,6 +70,8 @@ XTerm*VT100*translations: #override \
 ! ----------------------------------------------------------------------------- 
 ! rxvt-unicode
 ! ----------------------------------------------------------------------------- 
+!
+! Some nice documentation: https://wiki.archlinux.org/title/Rxvt-unicode
 
 URxvt.colorPalette: linux
 URxvt*background: rgb:00/00/00
@@ -119,7 +121,8 @@ URxvt*matcher.button: Ctrl-1
 ! the X selections and either modify or use the internal selection text in
 ! various ways (such as uri unescaping, perl evaluation, web-browser starting
 ! etc.), depending on content
-URxvt*perl-ext-common: default,matcher,selection-popup,font-size
+! selection-to-clipboard - selected text copies to clipboard
+URxvt*perl-ext-common: default,matcher,selection-popup,font-size,selection-to-clipboard
 
 
 ! Key bindings
@@ -136,6 +139,12 @@ URxvt*keysym.Shift-Control-Down: font-size:decrease
 ! Word by word movement
 URxvt.keysym.Control-Left:  \033[1;5D
 URxvt.keysym.Control-Right: \033[1;5C
+
+! copy into PRIMARY selection and also ensure that your CLIPBOARD selection is
+! updated with the same contents
+URxvt.clipboard.autocopy: true
+URxvt.keysym.Control-Alt-c: perl:clipboard:copy
+URxvt.keysym.Control-Alt-v: perl:clipboard:paste
 
 ! ----------------------------------------------------------------------------- 
 ! End of rxvt-unicode
