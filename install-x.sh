@@ -12,6 +12,7 @@ apt install --no-install-recommends -y \
   i3-wm \
   i3lock \
   i3status \
+  libanyevent-i3-perl \
   libnotify-bin \
   maim \
   notify-osd \
@@ -42,6 +43,9 @@ apt install --no-install-recommends -y \
 # i2status            -  status line for i3bar
 # libnotify-bin       -  library that sends desktop notifications to a
 #                        notification daemon
+# libanyevent-i3-perl -  Perl module to communicate with the i3 window manager
+#                        (needed in order to save i3 layouts using i3-save-tree
+#                        command)
 # maim                -  takes screenshots of your desktop
 # notify-osd          -  daemon that displays passive pop-up notifications
 # pavucontrol         -  PulseAudio volume controle (simple GTK+ based volume
