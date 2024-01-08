@@ -170,6 +170,7 @@ let g:ctrlp_max_depth = 40
 
 " dependencies:
 " rubocop (rvm @global do gem install rubocop)
+" yamllint (apt install yamllint)
 " prettier (npm --global install prettier)
 " tidy (apt install tidy)
 " shfmt (go get -u mvdan.cc/sh/cmd/shfmt)
@@ -198,7 +199,7 @@ let g:ale_linters = {
 \ 'less':       ['prettier'],
 \ 'scss':       ['prettier'],
 \ 'ruby':       ['rubocop'],
-\ 'yaml':       ['prettier'],
+\ 'yaml':       ['yamllint'],
 \ 'bash':       ['shellcheck']
 \}
 "===============================================================================
@@ -206,7 +207,7 @@ let g:ale_linters = {
 
 " set cursorline                  " highlight current line
 set mouse=a                       " mouse functionality enabled
-set ttymouse=urxvt                " mouse support in vim
+set ttymouse=sgr                  " mouse support in vim
 set showmatch                     " highlight matching [{()}]
 set foldmethod=syntax
 
@@ -221,6 +222,10 @@ set hlsearch                      " Highlight all search results
 set smartcase                     " Enable smart-case search
 set ignorecase                    " Always case-insensitive
 set incsearch                     " Searches for strings incrementally
+set scrolloff=5                   " Minimal number of screen lines to keep above and below the cursor
+set sidescroll=1                  " Minimal number of columns to scroll horizontally
+set sidescrolloff=5               " Minimal number of screen columns to keep to the left and to the right of the cursor if 'nowrap' is set.
+set listchars=eol:←,tab:→→,space:⋅,nbsp:␣,trail:⒈,extends:▶,precedes:◀ " How whitespace chars will be shown with `:set list` command
 
 set autoindent                    " Auto-indent new lines
 set expandtab                     " Use spaces instead of tabs
@@ -228,7 +233,7 @@ set shiftwidth=2                  " Number of auto-indent spaces
 set smartindent                   " Enable smart-indent
 set smarttab                      " Enable smart-tabs
 set softtabstop=2                 " Number of spaces per Tab
-set tabstop=2   
+set tabstop=2
 set directory=$HOME/.vim/swp//    " Place where vim will keep its swap files
 
 set clipboard=unnamed,unnamedplus " use the system clipboard
@@ -250,7 +255,7 @@ set backspace=indent,eol,start " Backspace behaviour
 set laststatus=2               " show status bar all the time
 set nowrap                     " do not wrap long lines"
 
-let NERDTreeShowHidden=1    " show hidden files in NERDTree
+" let NERDTreeShowHidden=1    " show hidden files in NERDTree
 
 " override gui background color from colorscheme (set it to black)
 highlight Normal   ctermbg=0 guibg=#000000 " set it to black
@@ -278,7 +283,7 @@ endif
 set statusline=%f                                           " filename
 set statusline+=\ %h%m%r                                    " help buffer tag, modified tag, read only tag
 set statusline+=%=                                          " separator left-right side of status line
-set statusline+=%{gutentags#statusline()}                   " know when gutentags is generating tags
+" set statusline+=%{gutentags#statusline()}                   " know when gutentags is generating tags
 set statusline+=\ %l/%L:%c                                  " line-number/total-number-of-lines:column-number
 set statusline+=\ [0x%B]                                    " unicode value of the characted under the cursor
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}  " file encoding
