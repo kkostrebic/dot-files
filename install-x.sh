@@ -26,7 +26,8 @@ apt install --no-install-recommends -y \
   xfonts-base \
   xinit \
   xserver-xorg \
-  xterm
+  xterm \
+  mousepad
 
 # arandr              -  ARandR is a visual front end for XRandR, which provides
 #                        full control over the relative positioning and
@@ -65,3 +66,4 @@ apt install --no-install-recommends -y \
 # xinit               -  X server initialisation tool (xinit, startx)
 # xserver-xorg        -  x.org X server
 # xterm               -  X terminal emulator
+# mousepad            -  Mousepad is a graphical text editor for Xfce
