@@ -200,7 +200,10 @@ let g:ale_linters = {
 \ 'scss':       ['prettier'],
 \ 'ruby':       ['rubocop'],
 \ 'yaml':       ['yamllint'],
-\ 'bash':       ['shellcheck']
+\ 'bash':       ['shellcheck'],
+\ 'typescript': ['prettier'],
+\ 'markdown':   ['prettier'],
+\ 'dockerfile': ['hadolint']
 \}
 "===============================================================================
 
