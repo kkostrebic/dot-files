@@ -27,89 +27,85 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
 augroup END
 
-packadd! matchit
+" packadd! matchit
 
-" Vundle (plugin manager)
+" Plug (plugin manager)
 "===============================================================================
+" NOTE: Download plug.vim and put it in the "autoload" directory, i.e.
+" 	    $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
+call plug#begin()
 " Directory and file navigation plugin
 " Plugin 'scrooloose/nerdtree'
 
 " git plugin
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " rails.vim: Ruby on Rails power tools
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-flagship'
 
 " insert or delete brackets, parens, quotes in pair
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 " Fuzzy file, buffer, mru, tag, etc. finder
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Provides linting (syntax checking and semantic errors) while you edit your
 " text files, and acts as a Vim Language Server Protocol client
-Plugin 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
 " Edit large files quickly
-Plugin 'vim-scripts/LargeFile'
+Plug 'vim-scripts/LargeFile'
 
 " Search in files 
-Plugin 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 
 " Support for expanding abbreviations for html & css
-Plugin 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 
 " A simple, easy-to-use Vim alignment plugin
-Plugin 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 
 " Color theme
-Plugin 'NLKNguyen/papercolor-theme'
+Plug 'NLKNguyen/papercolor-theme'
 
 " Tagbar is a Vim plugin that provides an easy way to browse the tags of the
 " current file and get an overview of its structure.
-Plugin 'preservim/tagbar'
+Plug 'preservim/tagbar'
 
 " A Vim plugin that manages your tag files (using ctags)
-Plugin 'ludovicchabant/vim-gutentags.git'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Personal Wiki for Vim 
-Plugin 'vimwiki/vimwiki.git'
+Plug 'vimwiki/vimwiki'
 
 " automatically synchronize Vimwiki notes directory on Vimwiki startup and exit
 " using Git
-Plugin 'michal-h21/vimwiki-sync.git'
+Plug 'michal-h21/vimwiki-sync'
 
 " color name highlighter
-Plugin 'ap/vim-css-color'
+Plug 'ap/vim-css-color'
 
 " Multiple cursors plugin for vim/neovim
-Plugin 'mg979/vim-visual-multi'
+Plug 'mg979/vim-visual-multi'
 
 " allows you to select some text using Vim's visual mode and then hit * and #
 " to search for it elsewhere in the file
-Plugin 'nelstrom/vim-visual-star-search'
+Plug 'nelstrom/vim-visual-star-search'
 
 "Plugin 'prabirshrestha/vim-lsp'
 "Plugin 'mattn/vim-lsp-settings'
 
 " Plugin 'tpope/vim-bundler'
 
+" Plug 'github/copilot.vim'
+
 " **All of your Plugins must be added before the following line**
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()            " required
 "===============================================================================
 
 
@@ -228,7 +224,7 @@ set incsearch                     " Searches for strings incrementally
 set scrolloff=5                   " Minimal number of screen lines to keep above and below the cursor
 set sidescroll=1                  " Minimal number of columns to scroll horizontally
 set sidescrolloff=5               " Minimal number of screen columns to keep to the left and to the right of the cursor if 'nowrap' is set.
-set listchars=eol:←,tab:→→,space:⋅,nbsp:␣,trail:⒈,extends:▶,precedes:◀ " How whitespace chars will be shown with `:set list` command
+" set listchars=eol:←,tab:→→,space:⋅,nbsp:␣,trail:⒈,extends:▶,precedes:◀ " How whitespace chars will be shown with `:set list` command
 
 set autoindent                    " Auto-indent new lines
 set expandtab                     " Use spaces instead of tabs
@@ -237,9 +233,9 @@ set smartindent                   " Enable smart-indent
 set smarttab                      " Enable smart-tabs
 set softtabstop=2                 " Number of spaces per Tab
 set tabstop=2
-set directory=$HOME/.vim/swp//    " Place where vim will keep its swap files
+set directory=$HOME/.vim/swp//    " Place where vim will keep its swap files (NOTE: Make sure directory exists)
 
-set clipboard=unnamed,unnamedplus " use the system clipboard
+set clipboard=unnamedplus " use the system clipboard
 
 " background to dark to keep same color schema when using vim in tmux
 set t_Co=256    " make sure that terminal has 256 colors enabled
@@ -257,8 +253,6 @@ set backspace=indent,eol,start " Backspace behaviour
 
 set laststatus=2               " show status bar all the time
 set nowrap                     " do not wrap long lines"
-
-" let NERDTreeShowHidden=1    " show hidden files in NERDTree
 
 " override gui background color from colorscheme (set it to black)
 highlight Normal   ctermbg=0 guibg=#000000 " set it to black
@@ -283,11 +277,12 @@ endif
 
 " Status line definition
 "===============================================================================
-set statusline=%f                                           " filename
+set statusline=[%n]
+set statusline+=\ %f                                           " filename
 set statusline+=\ %h%m%r                                    " help buffer tag, modified tag, read only tag
 set statusline+=%=                                          " separator left-right side of status line
 " set statusline+=%{gutentags#statusline()}                   " know when gutentags is generating tags
-set statusline+=\ %l/%L:%c                                  " line-number/total-number-of-lines:column-number
+set statusline+=\ %l/%L:%c                                  " line-number of total-number-of-lines:column-number
 set statusline+=\ [0x%B]                                    " unicode value of the characted under the cursor
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}  " file encoding
 set statusline+=\ [%{&ff}]                                  " file format
@@ -301,14 +296,6 @@ let g:buftabline_numbers = 1 " show buffer numbers in tab line
 " search for tags file up to home directory
 set tags+=tags;$HOME
 
-" GVim settings
-"===============================================================================
-set guioptions-=m "remove menu bar
-set guioptions-=T "remove toolbar
-set guioptions-=r "remove right-hand scroll bar 
-set guioptions-=L "remove left-hand scroll bar 
-"===============================================================================
-
 " let g:AutoPairsFlyMode = 1
 
 hi TabLineSel   guibg=DarkGreen guifg=White
@@ -316,11 +303,16 @@ hi TabLine      guibg=Black     guifg=Gray
 hi StatusLine   ctermbg=0 ctermfg=10 guibg=Black     guifg=Green
 hi StatusLineNC ctermbg=4 ctermfg=8 guibg=DarkRed   guifg=DarkGray
 
-set guifont=DejaVu\ Sans\ Mono\ 9
 au BufNewFile,BufRead Jenkinsfile* setf groovy
 au BufNewFile,BufRead *.service    setf systemd
 au BufNewFile,BufRead *.unit       setf systemd
 au BufNewFile,BufRead *.timer      setf systemd
+
+" Set netrw settings for a customized width
+let g:netrw_liststyle = 3         " Tree-like view
+let g:netrw_winsize = -40         " Set width to 40 chars
+nmap ,e :Lexplore<CR>
+
 
 
 " Visual-Multi

@@ -24,7 +24,7 @@ apt install --no-install-recommends -y \
   module-assistant \
   net-tools \
   network-manager \
-  pulseaudio \
+  pipewire-audio \
   rename \
   ripgrep \
   rsync \
@@ -61,6 +61,7 @@ apt install --no-install-recommends -y \
 # module-assistant - Assistant for building kernel modules (important for VM Guest Additions), bzip2, xz-utils (compression utilities), perl 
 # net-tools - tools for controlling the network subsystem of the linux kernel, arp, ifconfig, netstat, rarp, nameif, route, plipconfig, slattach, mii-tool, iptinnel, ipmaddr
 # network-manager - network management service that manages network devices and connections (ethernet, WiFi, mobile broadband, PPPoE devices, VPN)
+# pipewire-audio - sound server (replacement for pulseaudio) & tools, recommended set of PipeWire packages for a standard audio desktop use PipeWire is a server and user space API to deal with multimedia pipelines
 # rename - tool (perl extension) for simple renaming multiple files
 # ripgrep - recursively searches directories for a regex pattern
 # rsync - fast, versatile, remote (and local) file-copying tool
